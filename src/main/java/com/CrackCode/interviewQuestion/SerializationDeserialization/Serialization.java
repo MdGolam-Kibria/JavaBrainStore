@@ -9,5 +9,4 @@ public class Serialization implements Serializable {
      Here serialVersionUID :
      here each serializable class a version number, called a serialVersionUID ..here each serializable class a version number, called a serialVersionUID ..that actually give a instruction to JVM Identity of a class.if we loaded  the converted byte object by deserialization with different serialVersionUID  it will give an exception,  cause this serialVersionUID version code is a identity of a class.
      **/
-
 }
