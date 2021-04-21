@@ -1,4 +1,4 @@
-package com.CrackCode.interviewQuestion.Polymorphism.designPattern.SingletonPattern;
+package com.CrackCode.interviewQuestion.designPattern.SingletonPattern;
 
 public class SingletonLazy {
     private static SingletonLazy singletonLazyInstance;

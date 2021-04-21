@@ -1,4 +1,4 @@
-package com.CrackCode.interviewQuestion.Polymorphism.designPattern.SingletonPattern;
+package com.CrackCode.interviewQuestion.designPattern.SingletonPattern;
 
 public class SingletonEger {
     private static SingletonEger singletonEagerInstance = new SingletonEger();
