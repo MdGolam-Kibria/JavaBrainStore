@@ -1,0 +1,37 @@
+Question:- What is Polymorphism in java ? How can we achieve Polymorphism ?
+
+Answer:-
+Polymorphism means "many forms"
+    This allows us to perform a single action in different ways from many position as we need for our requirement,
+Polymorphism mainly two types :
+
+1)Compile Time 2) Runtime
+
+Compile Time :-
+   If we talk about compile time Polymorphism there are  many ways to achieve compile time Polymorphism like below:
+
+        1.different parameterized constructor(same constructor name but behaviour/result  different depend on  parameter )
+.	    2.different parameterized Method(same method name but behaviour/result  different depend on  parameter and we can call
+          a method from many positions as we need )
+        3. We can also achieve Polymorphism by parent child relationship(we call in java inheritance).
+        4. We can achieve Polymorphism by overloading functions or constructor by pushing the parm as we need results.
+
+
+
+Runtime :-
+		If we talk about Runtime Polymorphism there are  many ways to achieve runtime Polymorphism like below:-
+1.by different parameterized method overriding we can achieve Runtime polymorphism.(Note : here Constructor overriding is not possible, Constructor depends on class name , Constructor looks like a method but name should be as class name and no return value  ).
+			When we override a method of super class then create then output will be based on reference object for
+
+example 1 :- See the example 1 package
+
+Output: Sir Complete Your Requirements
+
+Here program decided to call  the dowork() method runtime based on her reference object.
+
+example  2: See the example 2 package
+Output : Female
+
+Here program decided to call  the dowork() method runtime based on her reference object.
+
+

@@ -1,3 +1,5 @@
+Question: What is Serialization and deserialization ?
+
 Ans:
 Serialization :-
 Serialization is a way of converting object into a byte stream.It is mainly used to transfer object's on the network.basically, it help us to use a object one Java Virtual machine to another VM. we know bytecode understandable for any OS and that's why we know java is a platform independent language.
