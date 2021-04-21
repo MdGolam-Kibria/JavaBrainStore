@@ -4,7 +4,7 @@
       <b><u>Answer:- </u></b> <br/>
      @https://github.com/MdGolam-Kibria/interviewQuestion/tree/master/src/main/java/com/CrackCode/interviewQuestion/SerializationDeserialization <br/>
      
- <b>1)Polymorphism in java ? How can we achieve Polymorphism  ?<br/></b> 
+ <b>2)Polymorphism in java ? How can we achieve Polymorphism  ?<br/></b> 
  <b><u>Answer:- </u></b> <br/>
  @https://github.com/MdGolam-Kibria/interviewQuestion/tree/master/src/main/java/com/CrackCode/interviewQuestion/Polymorphism <br/>
 
