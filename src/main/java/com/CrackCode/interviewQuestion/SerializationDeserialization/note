@@ -1,0 +1,22 @@
+Ans:
+Serialization :-
+Serialization is a way of converting object into a byte stream.It is mainly used to transfer object's on the network.basically, it help us to use a object one Java Virtual machine to another VM. we know bytecode understandable for any OS and that's why we know java is a platform independent language.
+
+if we want to convert a object to byte stream, We must have to implement the Serializable interface for serializing the object.Serializable is a marker interface there is no member data or method and after that we can achieved this object by Deserialization
+ use case id Serialization:-
+       1) For Deep Communication.
+       2) For Caching (The time consumed in building an object is more compared to the time   required for de-serializing it) by this way we can optimize our application and much more .
+
+ example :-
+        class Test implements Serializable {
+        private static final long serialVersionUID = 1L; //Iit must be static long final.
+        private transient String city ;//here {transient}  for hide Serializable mechanism.
+        /**
+         Here serialVersionUID :
+            here each serializable class a version number, called a serialVersionUID ..here each serializable class a version number, called a serialVersionUID ..that actually give a instruction to JVM Identity of a class.if we loaded  the converted byte object by deserialization with different serialVersionUID  it will give an exception,  cause this serialVersionUID version code is a identity of a class.
+        **/
+            }
+
+Deserialization :
+If we talk about deserialization , deserialization  is way for achieved a object from    byte code by proper identity,  cause if JVM didn't find serialVersionUID
+then it will show an error called InvalidClassExcption.
