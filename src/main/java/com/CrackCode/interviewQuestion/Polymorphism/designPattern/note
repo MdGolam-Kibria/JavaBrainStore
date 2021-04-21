@@ -1,0 +1,6 @@
+Question :-What is Singleton pattern in java ? Types of singleton ? and How can we achieve that ?
+Answer:-
+Singleton pattern is divided into two types
+   1)Eager Loading: creation at load time.
+   2)Lazy Loading: the creation of an object whenever needed. Both eager and lazy design patterns differ in the way of
+   returning the object, if an object is null it returns a new singleton object or other particular objects.

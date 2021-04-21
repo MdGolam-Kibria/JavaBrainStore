@@ -20,7 +20,7 @@ Compile Time :-
 
 Runtime :-
 		If we talk about Runtime Polymorphism there are  many ways to achieve runtime Polymorphism like below:-
-1.by different parameterized method overriding we can achieve Runtime polymorphism.(Note : here Constructor overriding is not possible, Constructor depends on class name , Constructor looks like a method but name should be as class name and no return value  ).
+            1.by different parameterized method overriding we can achieve Runtime polymorphism.(Note : here Constructor overriding is not possible, Constructor depends on class name , Constructor looks like a method but name should be as class name and no return value  ).
 			When we override a method of super class then create then output will be based on reference object for
 
 example 1 :- See the example 1 package
@@ -32,6 +32,6 @@ Here program decided to call  the dowork() method runtime based on her reference
 example  2: See the example 2 package
 Output : Female
 
-Here program decided to call  the dowork() method runtime based on her reference object.
+Here program decided to call the yourGenderName() method runtime based on her reference object.
 
 
