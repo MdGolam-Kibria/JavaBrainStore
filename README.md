@@ -11,4 +11,14 @@
  <b>4) What About Singleton pattern in java ? Types of singleton ? and How can we achieve that ? <br/></b> 
       <b><u>Answer:- </u></b> <br/>
      @https://github.com/MdGolam-Kibria/interviewQuestion/tree/master/src/main/java/com/CrackCode/interviewQuestion/designPattern/SingletonPattern <br/>
+ 
+ 
+ <b>5) Difference  between factory and abstract factory pattern ? <br/></b> 
+      <b><u>Answer:- </u></b> <br/>
+      
+      <u>Factory Pattern</u> <br/>
+      @https://github.com/MdGolam-Kibria/interviewQuestion/tree/master/src/main/java/com/CrackCode/interviewQuestion/designPattern/Factory <br/>
+      
+      <u>Abstract Factory Pattern</u> <br/>
+      @https://github.com/MdGolam-Kibria/interviewQuestion/tree/master/src/main/java/com/CrackCode/interviewQuestion/designPattern/abstractFactory <br/>
      
