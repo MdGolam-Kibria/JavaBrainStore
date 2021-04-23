@@ -1,0 +1,16 @@
+FactoryPattern:
+   FactoryPattern is a design pattern. FactoryPattern mainly factory of object.
+   for implement this design pattern in our code make a interface or abstract class after that implement this class
+   to needed class after that
+   there we will add a Factory class where we can
+   add a method which will return the instance/object ( this object must be  a child of the interface) of the class based
+   on your requirement and this method will return
+
+   Real life example :-
+
+   if we talk with real life scenario about This pattern,
+            a software company have 2 or more programmers if we and every programmers is a child of this company
+            if we get the programmerName based on programming language on this company
+            we can achieved that using this design pattern.
+
+            Example: see this current package code.
