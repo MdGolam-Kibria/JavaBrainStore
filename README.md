@@ -14,9 +14,7 @@
  
  
  <b>5) Difference  between factory and abstract factory pattern ? <br/></b> 
-      <b><u>Answer:- </u></b> <br/>
-      
-      <h6><u>Factory Pattern</u> </h6><br/>
+      <b><u>Answer:- </u></b> <br/><h6><u>Factory Pattern</u> </h6><br/>
       @https://github.com/MdGolam-Kibria/interviewQuestion/tree/master/src/main/java/com/CrackCode/interviewQuestion/designPattern/Factory <br/>
       <h6><u>Abstract Factory Pattern</u> </h6><br/>
       @https://github.com/MdGolam-Kibria/interviewQuestion/tree/master/src/main/java/com/CrackCode/interviewQuestion/designPattern/abstractFactory <br/>
