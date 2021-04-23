@@ -1,6 +1,57 @@
 Question :-What is Singleton pattern in java ? Types of singleton ? and How can we achieve that ?
 Answer:-
-Singleton pattern is divided into two types
-   1)Eager Loading: creation at load time.
-   2)Lazy Loading: the creation of an object whenever needed. Both eager and lazy design patterns differ in the way of
-   returning the object, if an object is null it returns a new singleton object or other particular objects.
+A Singleton Pattern is a application design pattern this pattern use to instantiate class to one object.
+This pattern very useful when e face this type scenario.
+    Example:
+       i) Make API call Config
+       ii) Get Credential after login.
+We can achieved this pattern 4 ways :
+        1)Lazy loading.
+        2)Eager loading.
+        3)Singleton Double Check Locking.
+        4) Synchronized.
+                        -------------------------------------------------------
+
+   1)Lazy Loading: the creation of an object whenever needed for this scenario make sure to block default constructor
+           Example : See the SingletonLazy Class.
+           Problem: For this lazy singleton static variable is null.when two or more threads interested to call the singleton
+           object.
+                we know static property compile time store in .class file on MainMemory of the class area.
+                when we call this static property from another thread it find null for this purpose it will throws
+                an error leading to memory leak.
+
+                for fix this problem we can make this method [synchronized] synchronized ensure us we to achieved
+                thread safety.this synchronized push a instruction to JVM it doesn't accessible until unblock means it already block
+                by another class area/Thread and this process called singleton Synchronized pattern.
+
+
+
+   2)Eager Loading: creation at load time.
+            we know static property compile time store in .class file on MainMemory of the class area.
+            when we call this class instance it always provide us a same object cause this method return a object from
+            class area.
+           Example : See the SingletonEger Class.
+
+
+   3)Singleton Double Check Locking : [Singleton Double Check Locking] ensure us to achieved  best singleton way to get
+    only one object/instance of the singleton class for the whole application.
+    description:-
+    for example if we see the [eger loading,lazy loading] when we call those instance from another thread probably it will provide us
+    a memory leak exception,
+                    cause those static method compile time load the object on mainMemory of the class area.
+
+    Example: See the SingletonDoubleCheckLocking class.
+
+
+    4)Synchronized: we know static property compile time store in .class file on MainMemory of the class area.
+        when we call this static property from another thread it will throws
+        an error leading to memory leak.
+        for fix this problem we can make this method [synchronized] synchronized ensure us we to achieved
+        thread safety.this synchronized push a instruction to JVM it doesn't accessible until unblock means it already block
+        by another class area/Thread and this process called singleton Synchronized pattern.
+
+        mainly Synchronization stop a block of code of the singleton class to be executed by more than one thread at the same time.
+
+        Example: See the Synchronized class.
+
+
