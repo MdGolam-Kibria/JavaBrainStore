@@ -1,15 +1,16 @@
-AbstractFactoryPattern:
+AbstractFactoryPattern:-
+
    AbstractFactoryPattern is a design pattern. AbstractFactoryPattern mainly factory of object.
    for implement this design pattern in our code make a interface or abstract class after that implement this class
    to needed class after that
    there we will add a Factory class where we can
-   add a method which will return the instance/object ( this object must be  a child of the interface) of the class based
+   add method which will return the instance/object ( this object must be  a child of the interface) of the class based
    on your requirement and this method will return
 
    Real life example :-
 
    if we talk with real life scenario about This pattern,
-             2 or more  software industry after marge make a company called [BusinessAutomation] interested to add 2 or more developers and every developers will a child of this company
+            2 or more  software industry after marge make a company called [BusinessAutomation] interested to add 2 or more developers and every developers will a child of this company
             if we get the programmerName based on programming language on this company
             we can achieved that using this design pattern.
 
