@@ -5,10 +5,10 @@ import com.CrackCode.interviewQuestion.designPattern.abstractFactory.crackCode.C
 
 public class AbstractFactoryOutput {
     public static void main(String[] args) {
-        AgamiSoftDeveloper agamiSoftDeveloper = new BusinessAutomation().create("Backend Developer");
+        AgamiSoftDeveloper agamiSoftDeveloper = new BusinessAutomation().createInAgamiSoft("Backend Developer");
         System.out.printf(agamiSoftDeveloper.addNewDeveloper("Backend Developer"));
 
-        AgamiSoftDeveloper agamiSoftDeveloper1 = new BusinessAutomation().create("Backend Developer");
+        AgamiSoftDeveloper agamiSoftDeveloper1 = new BusinessAutomation().createInAgamiSoft("Backend Developer");
         System.out.printf("\n\n");
         System.out.printf(agamiSoftDeveloper1.addNewDeveloper("Backend Developer"));
         System.out.printf("\n\n");
