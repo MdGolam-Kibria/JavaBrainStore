@@ -18,4 +18,8 @@
       @https://github.com/MdGolam-Kibria/interviewQuestion/tree/master/src/main/java/com/CrackCode/interviewQuestion/designPattern/Factory <br/>
       <h6><u>Abstract Factory Pattern</u> </h6><br/>
       @https://github.com/MdGolam-Kibria/interviewQuestion/tree/master/src/main/java/com/CrackCode/interviewQuestion/designPattern/abstractFactory <br/>
-     
+      
+      
+<b>6) What is the Prototype Pattern ? <br/></b> 
+      <b><u>Answer:- </u></b> <br/><h6><u>Prototype Pattern :-</u> </h6><br/>
+      @https://github.com/MdGolam-Kibria/interviewQuestion/tree/master/src/main/java/com/CrackCode/interviewQuestion/designPattern/Prototype <br/>
