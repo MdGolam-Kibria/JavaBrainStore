@@ -110,10 +110,16 @@ public class StreamApiTest {
         System.out.println("Merged String: " + mergedString);
 
 
+        //--------------skip()--------------------------------
 
-
-
-
+        /**
+         * topic = ignore first index element from an array
+         */
+        personStreamList
+                .stream()
+                .map(personStream -> personStream.getName())
+                .skip(1)//first index
+                .collect(Collectors.toList()).forEach(System.out::println);
 
 
     }
