@@ -28,3 +28,8 @@
  <b>7) What is the Builder Pattern ? <br/></b> 
       <b><u>Answer:- </u></b> <br/><h6><u>Builder Pattern :-</u> </h6><br/>
       @https://github.com/MdGolam-Kibria/interviewQuestion/tree/master/src/main/java/com/CrackCode/interviewQuestion/designPattern/BuilderPattern <br/>
+      
+      
+  <b>8)About Stream API <br/></b> 
+      <b><u>Answer:- </u></b> <br/><h6><u>Stream API :-</u> </h6><br/>
+      @https://github.com/MdGolam-Kibria/interviewQuestion/tree/master/src/main/java/com/CrackCode/interviewQuestion/streamApi/loop <br/>
