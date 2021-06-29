@@ -37,3 +37,10 @@
   <b>9) Difference JPA and JDBC with explain details with example.<br/></b>
      <b><u>Answer:- </u></b> <br/><h6><u>JPA and JDBC :-</u> </h6> 
      @https://www.baeldung.com/jpa-vs-jdbc
+
+
+# <h1><b><center> <b><u>About Database 🙋</u></b></center> </b></h1>
+
+
+<b>1) Start Soon ? <br/></b> 
+      
