@@ -19,10 +19,10 @@ public class CountAverageWorker extends Thread {
                 .stream().mapToLong(value -> value).summaryStatistics();
 
         average = statistics.getAverage();
-        System.out.println(average);
     }
 
     public double getAverage() {
         return average;
     }
+
 }
