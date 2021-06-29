@@ -39,8 +39,30 @@
      @https://www.baeldung.com/jpa-vs-jdbc
 
 
-# <h1><b><center> <b><u>About Database 🙋</u></b></center> </b></h1>
+# <h1><b><center> <b><u>About Multithreading / Concurrency programming in Java ?🙋</u></b></center> </b></h1>
 
 
-<b>1) Start Soon ? <br/></b> 
+<b>1) What is Multithreading in java ?.<br/></b>
+<b><u>Answer:- </u></b> <br/><h6><u>Multithreading  :-</u> </h6>
+ <p>
+    <b><u>MULTITHREADING</u></b> in Java is a process of executing two or more threads simultaneously to maximum utilization of CPU. Multithreaded applications execute two or more threads run concurrently. Hence, it is also known as Concurrency in Java. Each thread runs parallel to each other. Mulitple threads don't allocate separate memory area, hence they save memory. Also, context switching between threads takes less time.
+</p>
+
+<b>2) Create a Thread and assign work to the thread after that get result from the thread ?.<br/></b>
+<b><u>Answer :- </u></b> <br/><h6><u>Thread  :-</u> </h6>
+ <p>
+    @https://github.com/MdGolam-Kibria/interviewQuestion/blob/master/src/main/java/com/CrackCode/interviewQuestion/threadProgramming/getResultFromAnotherThread/GetResultFromAnotherThread.java
+</p>
+
+<b>3) Create two Thread and assign work to the threads after that get result from the thread ? Remember that second thread shouldn't workable before end first thread work.<br/></b>
+<b><u>Answer :- </u></b> <br/><h6><u>Multithreading :-</u> </h6>
+<p>
+    @https://github.com/MdGolam-Kibria/interviewQuestion/blob/master/src/main/java/com/CrackCode/interviewQuestion/threadProgramming/multipleThread/MultipleThreadTest.java
+</p>
+
+<b>3)Create two or more thread that should be work simultaneously <br/></b>
+<b><u>Answer :- </u></b> <br/><h6><u>Multithreading :-</u> </h6>
+<p>
+    @https://github.com/MdGolam-Kibria/interviewQuestion/blob/master/src/main/java/com/CrackCode/interviewQuestion/threadProgramming/multipleThread/MultipleThreadWorkTogetherTest.java
+</p>
       
