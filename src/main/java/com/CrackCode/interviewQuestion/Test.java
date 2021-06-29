@@ -1,12 +1,22 @@
 package com.CrackCode.interviewQuestion;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Test {
-    public static int a = 12;
+
+    public boolean isEmpty(Object objectList) {
+        return true;
+    }
+
 
     public static void main(String[] args) {
-        a = 15;
-        System.out.printf("" + a);
-    }
-    class myTest{
+        List<String> objectList = new ArrayList<>();
+        objectList.addAll(Arrays.asList("a", "b", "c", "d"));
+
+
+        new Test().isEmpty(new ArrayList<>());
+
     }
 }

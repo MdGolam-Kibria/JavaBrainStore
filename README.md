@@ -33,3 +33,7 @@
   <b>8)About Stream API <br/></b> 
       <b><u>Answer:- </u></b> <br/><h6><u>Stream API :-</u> </h6><br/>
       @https://github.com/MdGolam-Kibria/interviewQuestion/tree/master/src/main/java/com/CrackCode/interviewQuestion/streamApi/loop <br/>
+
+  <b>9) Difference JPA and JDBC with explain details with example.<br/></b>
+     <b><u>Answer:- </u></b> <br/><h6><u>JPA and JDBC :-</u> </h6> 
+     @https://www.baeldung.com/jpa-vs-jdbc
