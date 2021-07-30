@@ -1,6 +1,4 @@
-package com.CrackCode.interviewQuestion.streamApi.loop;
-
-import lombok.Data;
+package com.CrackCode.interviewQuestion.java8.predicate.streamApi;
 
 public class PersonStream {
     private String id;

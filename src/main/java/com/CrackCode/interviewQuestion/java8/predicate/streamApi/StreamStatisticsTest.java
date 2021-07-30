@@ -1,4 +1,4 @@
-package com.CrackCode.interviewQuestion.streamApi.loop;
+package com.CrackCode.interviewQuestion.java8.predicate.streamApi;
 
 import java.util.Arrays;
 import java.util.DoubleSummaryStatistics;

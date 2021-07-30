@@ -1,8 +1,7 @@
-package com.CrackCode.interviewQuestion.streamApi.loop;
+package com.CrackCode.interviewQuestion.java8.predicate.streamApi;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
 import java.util.stream.Collectors;
 
 public class StreamApiTest {
