@@ -1,4 +1,4 @@
-package com.CrackCode.interviewQuestion.java8.predicate.streamApi;
+package com.CrackCode.interviewQuestion.java8.streamApi;
 
 public class PersonStream {
     private String id;
