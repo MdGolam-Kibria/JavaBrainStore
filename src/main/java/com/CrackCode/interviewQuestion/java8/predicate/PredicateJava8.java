@@ -49,5 +49,13 @@ public class PredicateJava8 {
 
         System.out.println("negate = " + testCollect);
 
+
+        /**
+         * Predicate test() beauty for apply not statement feature
+         */
+        Predicate<Integer> isNotEqual0 = x -> x == 0;
+        System.out.println("test method check = "+isNotEqual0.test(Integer.parseInt("0")));
+
+
     }
 }
