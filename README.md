@@ -30,9 +30,9 @@
       @https://github.com/MdGolam-Kibria/interviewQuestion/tree/master/src/main/java/com/CrackCode/interviewQuestion/designPattern/BuilderPattern <br/>
       
       
-  <b>8)About Stream API <br/></b> 
-      <b><u>Answer:- </u></b> <br/><h6><u>Stream API :-</u> </h6><br/>
-      @https://github.com/MdGolam-Kibria/interviewQuestion/tree/master/src/main/java/com/CrackCode/interviewQuestion/streamApi/loop <br/>
+  <b>8)Java 8 All features like everything about [Stream API,Optional class,Functional Interface,lambda,predicate]<br/></b> 
+      <b><u>Answer:- </u></b> <br/><h6><u>Everything About JAVA 8 :-</u> </h6><br/>
+      @https://github.com/MdGolam-Kibria/interviewQuestion/tree/master/src/main/java/com/CrackCode/interviewQuestion/java8 <br/>
 
   <b>9) Difference JPA and JDBC with explain details with example.<br/></b>
      <b><u>Answer:- </u></b> <br/><h6><u>JPA and JDBC :-</u> </h6> 
