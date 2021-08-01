@@ -30,7 +30,7 @@
       @https://github.com/MdGolam-Kibria/interviewQuestion/tree/master/src/main/java/com/CrackCode/interviewQuestion/designPattern/BuilderPattern <br/>
       
       
-  <b>8)Java 8 All features like everything about [Stream API,Optional class,Functional Interface,lambda,predicate]<br/></b> 
+  <b>8) <h1>🔥🔥🔥 Java 8 All features like everything about [Stream API,Optional class,Functional Interface,lambda,predicate] 🔥🔥🔥🔥</h1><br/></b> 
       <b><u>Answer:- </u></b> <br/><h6><u>Everything About JAVA 8 :-</u> </h6><br/>
       @https://github.com/MdGolam-Kibria/interviewQuestion/tree/master/src/main/java/com/CrackCode/interviewQuestion/java8 <br/>
 
