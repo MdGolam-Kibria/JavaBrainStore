@@ -23,7 +23,5 @@ public class Frequency {
          */
         var average = list.parallelStream().mapToInt(value -> value).average();
         System.out.println(average.getAsDouble());
-
-
     }
 }
