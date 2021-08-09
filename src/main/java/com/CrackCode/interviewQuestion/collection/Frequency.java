@@ -12,5 +12,18 @@ public class Frequency {
         List<Integer> list = Arrays.asList(6,3,1,2,4,2,5,8,6,6,6,4,5,3);
         int frequency = Collections.frequency(list,/*findable number*/6);
         System.out.println(frequency);
+
+        /**
+         * count sum of the list
+         */
+        var sum = list.parallelStream().mapToLong(value -> value).sum();
+        System.out.println(sum);
+        /**
+         * count average of the list
+         */
+        var average = list.parallelStream().mapToInt(value -> value).average();
+        System.out.println(average.getAsDouble());
+
+
     }
 }
