@@ -100,7 +100,7 @@ public class DateUtil {
 
     public static Map<String, Long> getDateDifferenceInfo(String startdate, String enddate, String datePattern) throws ParseException {
         /**
-         * below comment code is sample
+         * below comment code is sample input format
          */
        /* SimpleDateFormat sdf = new SimpleDateFormat("yyy/MM/dd HH:mm:ss a", Locale.ENGLISH);
         Date startDate = sdf.parse("2021/5/10 5:2:12 PM"); //set your start time
