@@ -22,6 +22,8 @@ public class PredicateAndFunctionWithStreamAPi {
 
         /** now show the tricks */
         testTheTricks(manList);
+        /**see another tricks**/
+        testAnotherTricks(manList);
     }
 
     private static void testTheTricks(Collection manList) {
@@ -30,5 +32,23 @@ public class PredicateAndFunctionWithStreamAPi {
 
         Stream nameList = manList.stream().filter(is18Plus).map(addWithName);
         nameList.forEach(s -> System.out.println(s));
+    }
+
+    /**
+     * best practice
+     */
+    private static void testAnotherTricks(Collection manList) {
+        Predicate<Man> is18Plus = v -> v.getAge() >= 18;
+        Function<Man/*Source*/, Man/*returnable Object*/> addWithName = v -> new PredicateAndFunctionWithStreamAPi().getMan(v);
+
+        Stream nameList = manList.stream().filter(is18Plus).map(addWithName);
+        nameList.forEach(s -> System.out.println(s));
+    }
+
+    public static Man getMan(Man man) {
+        Predicate<Man> is18Plus = v -> v.getAge() >= 18;
+        if (is18Plus.test(man))
+            man.setAge(100);
+        return man;
     }
 }
