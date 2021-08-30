@@ -71,6 +71,8 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+<!--		for docker this name must match with the DockerFile target name and endpoint-->
+		<finalName>spring-boot-docker</finalName>
 	</build>
 
 </project>
