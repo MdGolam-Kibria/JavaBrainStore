@@ -24,6 +24,13 @@ public class PredicateAndFunctionWithStreamAPi {
         testTheTricks(manList);
         /**see another tricks**/
         testAnotherTricks(manList);
+        /**util Function apply() method**/
+        if (functionApplyMethodCheck(manList)) {
+            System.out.println("This is function apply method test result = true");
+        } else {
+            System.out.println("This is function apply method test result = false");
+        }
+
     }
 
     private static void testTheTricks(Collection manList) {
@@ -50,5 +57,22 @@ public class PredicateAndFunctionWithStreamAPi {
         if (is18Plus.test(man))
             man.setAge(100);
         return man;
+    }
+
+    /**
+     * test java.util Function apply() method check
+     */
+    public static Boolean functionApplyMethodCheck(Collection manList) {
+        Function<Man, Boolean> is18Plus = v -> new PredicateAndFunctionWithStreamAPi().is18Plus(v.getAge());
+        Man man = new Man();
+        man.setAge(17);//set static age for test
+        if (is18Plus.apply(man)) {
+            return true;
+        }
+        return false;
+    }
+
+    public Boolean is18Plus(Integer age) {
+        return age > 18 ? true : false;
     }
 }
