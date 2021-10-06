@@ -30,6 +30,25 @@ public class QuerySample {
                 t3.c = t2.c
             WHERE t1.a = 'blah';
             """;
+    /**
+     * For UPDATE with join and sub join logic
+     */
+    public static final String UPDATE_SUB_JOIN= """
+            UPDATE Region
+            SET
+              Region.Column1 = r.Column1
+              Region.Column2 = r.Column2
+            FROM
+              Region
+            INNER JOIN
+             (
+               SELECT
+                    Column1,
+                    Column2
+               FROM Region
+               WHERE (your condition here)
+              ) r ON r.ID = Region.ID
+            """;
 
     /**
      * For DELETE data from multiple table using join sample 1
