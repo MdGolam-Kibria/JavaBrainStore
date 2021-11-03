@@ -83,9 +83,8 @@
     
 ![image](https://user-images.githubusercontent.com/61331272/140170070-a47c9d32-fab2-4032-a631-018d96c9f53a.png)
  <p>Another one Example:-</p><br/>
-
-<p>
+ 
  ![image](https://user-images.githubusercontent.com/61331272/140170513-d637c3f8-f214-48ad-8ab0-66928c4fc3a1.png)
-</p>
+ 
 </p><br/><br/>
       
