@@ -64,5 +64,15 @@
 <b><u>Answer :- </u></b> <br/><h6><u>Multithreading :-</u> </h6>
 <p>
     @https://github.com/MdGolam-Kibria/interviewQuestion/blob/master/src/main/java/com/CrackCode/interviewQuestion/threadProgramming/multipleThread/MultipleThreadWorkTogetherTest.java
+</p><br/>
+
+
+<h2> 💯  Learn about PL/SQL 💯  </h2><br/>
+<b>1)Create PL/SQL operation for get all data from a table and print some specific value<br/></b>
+<b><u>Answer :- </u></b> <br/><h6><u>Answer:-</u> </h6>
+<p>
+    
+![image](https://user-images.githubusercontent.com/61331272/140168729-dacdfedc-e961-4758-8ed2-c7926d85e01f.png)
+
 </p>
       
