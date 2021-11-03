@@ -97,3 +97,14 @@
 
 </p><br/><br/>
       
+      
+<b>3)Create a procedure for get all data from a table ? and call it from spring boot server<br/></b>
+<b><u>Answer :- </u></b> 
+<br/><h6><u>Procedure:-</u> </h6>
+   ![image](https://user-images.githubusercontent.com/61331272/140188207-265fbb62-033c-4abb-8205-c4d91dcb19a1.png)
+ <br/>
+ <br/><h6><u>Call from java :-</u> </h6><br/>
+ 
+ ![image](https://user-images.githubusercontent.com/61331272/140188447-47cc3c73-70e1-4917-bbb2-afd1df43f14c.png)
+
+      
