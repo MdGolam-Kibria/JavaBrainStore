@@ -87,4 +87,13 @@
  ![image](https://user-images.githubusercontent.com/61331272/140170513-d637c3f8-f214-48ad-8ab0-66928c4fc3a1.png)
  
 </p><br/><br/>
+
+
+<b>3)How to call a procedure for a spring  application<br/></b>
+<b><u>Answer :- </u></b> <br/><h6><u>Answer:-</u> </h6>
+<p>
+    
+ ![image](https://user-images.githubusercontent.com/61331272/140171122-ac0c8c75-ced8-41c8-8d90-6c509217f395.png)
+
+</p><br/><br/>
       
