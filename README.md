@@ -110,9 +110,7 @@
  <b>4)Create a procedure for get <b>XML</b> as IN param and parse it after that save data to a table ? and call it from spring boot server by sending the expected params<br/></b>
 <b><u>Answer :- </u></b> 
 <br/><h6><u>Procedure:-</u> </h6>
-  ![image](https://user-images.githubusercontent.com/61331272/140386030-a04279cd-4867-43c6-a328-fc5f0a67fc0a.png)
- <br/><h6><u>Call from java :-</u> </h6><br/>
- 
+   
  ```
  create procedure saveEmployeeex(
     stmt IN CLOB,
@@ -159,7 +157,10 @@ begin
     end if;
 END 
  ```
+  
+  
+ <br/><h6><u>Call from java :-</u> </h6><br/>
 
-
+![image](https://user-images.githubusercontent.com/61331272/140409532-cc580a34-106d-4d9c-b6f9-ed0d10a79358.png)
 
       
