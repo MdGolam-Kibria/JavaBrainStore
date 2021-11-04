@@ -112,7 +112,53 @@
 <br/><h6><u>Procedure:-</u> </h6>
   ![image](https://user-images.githubusercontent.com/61331272/140386030-a04279cd-4867-43c6-a328-fc5f0a67fc0a.png)
  <br/><h6><u>Call from java :-</u> </h6><br/>
- ![image](https://user-images.githubusercontent.com/61331272/140386207-adaafa52-7be7-427a-893a-913f35f6abe3.png)
+ 
+ ```
+ create procedure saveEmployeeex(
+    stmt IN CLOB,
+    output OUT number
+) AS
+    id_T    EMPLOYEE.ID%TYPE;
+    name_T  EMPLOYEE.NAME%TYPE;
+    email_T EMPLOYEE.EMAIL%TYPE;
+    tempRow number;
+    CURSOR field_cursor
+        IS
+        SELECT XMLTYPE.EXTRACT(VALUE(a),
+                               '/rowrecord/STUDENT_ID/text()').getStringVal(),
+               XMLTYPE.EXTRACT(VALUE(a),
+                               '/rowrecord/STUDENT_NAME/text()').getStringVal(),
+               XMLTYPE.EXTRACT(VALUE(a), '/rowrecord/STUDENT_EMAIL/text()').getStringVal()
+
+        FROM TABLE (
+                 XMLSEQUENCE(
+                         XMLTYPE(stmt).EXTRACT('/statement/rowrecord'))) a;
+begin
+
+    output := 0;
+    tempRow:=0;
+    open field_cursor;
+
+    LOOP
+        FETCH field_cursor
+            INTO id_T,name_T,email_T;
+        exit when field_cursor%NOTFOUND;
+    END LOOP;
+    select count(*) into tempRow from EMPLOYEE where ID = id_T;
+    IF tempRow is not null then
+        update EMPLOYEE
+        set EMPLOYEE.ID    = id_T,
+            EMPLOYEE.NAME  = name_T,
+            EMPLOYEE.EMAIL =email_T
+        where ID = id_T;
+        output := 1;
+    else
+        insert into EMPLOYEE(id, name, email) VALUES (id_T, name_T, email_T);
+        commit;
+        output := 1;
+    end if;
+END 
+ ```
 
 
 
