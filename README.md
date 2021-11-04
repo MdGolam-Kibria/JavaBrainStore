@@ -111,7 +111,6 @@
 <b><u>Answer :- </u></b> 
 <br/><h6><u>Procedure:-</u> </h6>
   ![image](https://user-images.githubusercontent.com/61331272/140386030-a04279cd-4867-43c6-a328-fc5f0a67fc0a.png)
- <br/>
  <br/><h6><u>Call from java :-</u> </h6><br/>
  ![image](https://user-images.githubusercontent.com/61331272/140386207-adaafa52-7be7-427a-893a-913f35f6abe3.png)
 
