@@ -169,11 +169,30 @@ END
 <br/><h6><u>Procedure:-</u> </h6>
    For This case we need to create a package with procedure interface and after that create the procedure body using PL/SQ query as like below : - <br/>
   
-  i)Create Package :-</b>
-![image](https://user-images.githubusercontent.com/61331272/140702489-bf05d732-fe2d-4c4b-a331-a77960cc60c2.png)
-  ii) create package body :- </b> 
-![image](https://user-images.githubusercontent.com/61331272/140702622-bda1cdd4-014b-4ea6-8031-3b12897950c4.png)
+  i)Create Package :-<br/
+![image](https://user-images.githubusercontent.com/61331272/140702489-bf05d732-fe2d-4c4b-a331-a77960cc60c2.png) <br/>
+```
+create PACKAGE getAllEmployeeByPackage AS
+    PROCEDURE getAll(
+        e_disp OUT SYS_REFCURSOR
+    );
+END getAllEmployeeByPackage;
+/
+```
+  ii) create package body :-<br/>
+![image](https://user-images.githubusercontent.com/61331272/140702622-bda1cdd4-014b-4ea6-8031-3b12897950c4.png) <br/>
+```
+create package body getAllEmployeeByPackage as
+    procedure getAll(
+        e_disp OUT SYS_REFCURSOR
+    ) IS
+    BEGIN
+        open e_disp for select *  from EMPLOYEE;
+    END getAll;
+end getAllEmployeeByPackage;
+/
+```
  <br/>
  <br/><h6><u>Call from java :-</u> </h6><br/>
- ![image](https://user-images.githubusercontent.com/61331272/140702767-83d35fa5-18b6-4de5-b4df-395a2e54c238.png)
+ ![image](https://user-images.githubusercontent.com/61331272/140702767-83d35fa5-18b6-4de5-b4df-395a2e54c238.png) <br/>
 
