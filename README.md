@@ -169,7 +169,7 @@ END
 <br/><h6><u>Procedure:-</u> </h6>
    For This case we need to create a package with procedure interface and after that create the procedure body using PL/SQ query as like below : - <br/>
   
-  i)Create Package :-<br/
+  i)Create Package :-<br/>
 ![image](https://user-images.githubusercontent.com/61331272/140702489-bf05d732-fe2d-4c4b-a331-a77960cc60c2.png) <br/>
 ```
 create PACKAGE getAllEmployeeByPackage AS
