@@ -169,9 +169,9 @@ END
 <br/><h6><u>Procedure:-</u> </h6>
    For This case we need to create a package with procedure interface and after that create the procedure body using PL/SQ query as like below : - <br/>
   
-  i)Create Package :-
+  i)Create Package :-</b>
 ![image](https://user-images.githubusercontent.com/61331272/140702489-bf05d732-fe2d-4c4b-a331-a77960cc60c2.png)
-  ii) create package body :- 
+  ii) create package body :- </b> 
 ![image](https://user-images.githubusercontent.com/61331272/140702622-bda1cdd4-014b-4ea6-8031-3b12897950c4.png)
  <br/>
  <br/><h6><u>Call from java :-</u> </h6><br/>
