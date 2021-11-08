@@ -164,3 +164,16 @@ END
 ![image](https://user-images.githubusercontent.com/61331272/140409532-cc580a34-106d-4d9c-b6f9-ed0d10a79358.png)
 
       
+<b>5)Create a procedure inside a <b> package using PL?SQL</b> ? and call it from spring boot server<br/></b>
+<b><u>Answer :- </u></b> 
+<br/><h6><u>Procedure:-</u> </h6>
+   For This case we need to create a package with procedure interface and after that create the procedure body using PL/SQ query as like below : - <br/>
+  
+  i)Create Package :-
+![image](https://user-images.githubusercontent.com/61331272/140702489-bf05d732-fe2d-4c4b-a331-a77960cc60c2.png)
+  ii) create package body :- 
+![image](https://user-images.githubusercontent.com/61331272/140702622-bda1cdd4-014b-4ea6-8031-3b12897950c4.png)
+ <br/>
+ <br/><h6><u>Call from java :-</u> </h6><br/>
+ ![image](https://user-images.githubusercontent.com/61331272/140702767-83d35fa5-18b6-4de5-b4df-395a2e54c238.png)
+
