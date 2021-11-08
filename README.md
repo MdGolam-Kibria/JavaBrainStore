@@ -224,23 +224,4 @@ procedure getEmployeeById(
  <br/><h6><u>Call from java :-</u> </h6><br/>
  ![image](https://user-images.githubusercontent.com/61331272/140736794-a4776089-1bde-4e03-9040-44eed4bd454a.png)
 <br/>
-```
- @Override
-    public Object getAllEmployeeByIDUsingPackageProcedureCall(Long id) {
-        StoredProcedureQuery query = entityManager.createStoredProcedureQuery("getAllEmployeeByPackage2.getEmployeeById");
-        query.registerStoredProcedureParameter(1, Long.class, ParameterMode.IN);
-        query.registerStoredProcedureParameter(2, Object.class, ParameterMode.REF_CURSOR);
-        //set value
-        query.setParameter(1, id);
-        //now execute the query
-        query.execute();
-
-        //Get output parameters
-        List<Object> result = (List<Object>) query.getResultList();
-        if (result.isEmpty()) {
-            return "No Data Found";
-        }
-        return result;
-    }
-```
 
