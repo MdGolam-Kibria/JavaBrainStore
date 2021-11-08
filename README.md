@@ -194,5 +194,7 @@ end getAllEmployeeByPackage;
 ```
  <br/>
  <br/><h6><u>Call from java :-</u> </h6><br/>
- ![image](https://user-images.githubusercontent.com/61331272/140702767-83d35fa5-18b6-4de5-b4df-395a2e54c238.png) <br/>
+ 
+ ![image](https://user-images.githubusercontent.com/61331272/140702767-83d35fa5-18b6-4de5-b4df-395a2e54c238.png)
+ 
 
