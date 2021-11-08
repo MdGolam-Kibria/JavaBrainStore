@@ -197,4 +197,50 @@ end getAllEmployeeByPackage;
  
  ![image](https://user-images.githubusercontent.com/61331272/140702767-83d35fa5-18b6-4de5-b4df-395a2e54c238.png)
  
+ 
+ <b>6)Create a procedure for get Employee by id otherwise retun empty sys_refcursor from EMPLOYEE table ? and call it from spring boot server<br/></b>
+<b><u>Answer :- </u></b> 
+<br/><h6><u>Procedure:-</u> </h6>
+   ![image](https://user-images.githubusercontent.com/61331272/140736643-7187ef37-c9ed-460e-b64e-1584063f50fd.png)
+<br/>
+```
+procedure getEmployeeById(
+        id_in IN EMPLOYEE.ID%type,
+        e_disp OUT SYS_REFCURSOR
+    ) IS
+        hasEmployee number;
+    BEGIN
+        hasEmployee := 0;
+        SELECT count(*) into hasEmployee from EMPLOYEE where ID = id_in;
+        IF hasEmployee <> 0 THEN --here <> means !=
+            OPEN e_disp FOR SELECT * FROM EMPLOYEE WHERE ID = id_in;
+        ELSE
+            --return empty SYS_REFCURSOR couse 1=2 not equal always
+            OPEN e_disp FOR SELECT * FROM EMPLOYEE WHERE 1=2;
+        END IF;
+    END getEmployeeById;
+```
+ <br/>
+ <br/><h6><u>Call from java :-</u> </h6><br/>
+ ![image](https://user-images.githubusercontent.com/61331272/140736794-a4776089-1bde-4e03-9040-44eed4bd454a.png)
+<br/>
+```
+ @Override
+    public Object getAllEmployeeByIDUsingPackageProcedureCall(Long id) {
+        StoredProcedureQuery query = entityManager.createStoredProcedureQuery("getAllEmployeeByPackage2.getEmployeeById");
+        query.registerStoredProcedureParameter(1, Long.class, ParameterMode.IN);
+        query.registerStoredProcedureParameter(2, Object.class, ParameterMode.REF_CURSOR);
+        //set value
+        query.setParameter(1, id);
+        //now execute the query
+        query.execute();
+
+        //Get output parameters
+        List<Object> result = (List<Object>) query.getResultList();
+        if (result.isEmpty()) {
+            return "No Data Found";
+        }
+        return result;
+    }
+```
 
