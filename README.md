@@ -223,6 +223,31 @@ procedure getEmployeeById(
  <br/><h6><u>Call from java :-</u> </h6><br/>
  
  ![image](https://user-images.githubusercontent.com/61331272/140736794-a4776089-1bde-4e03-9040-44eed4bd454a.png)
+ <br/>
+ <b>3)Create a PL/SQL function (SUM of two number) and test it from SYSTEM<br/></b>
+<b><u>Answer :- </u></b> 
+<br/><h6><u>FUNCTION:-</u> </h6>
+   ![image](https://user-images.githubusercontent.com/61331272/141075382-1e0ca616-fff1-42d8-8cdc-3f0c3310474d.png)<br/>
+   ```
+   create or replace function adder(n1 in number, n2 in number)
+    return number
+    is
+    n3 number(8);
+begin
+    n3 :=n1+n2;
+    return n3;
+end;
+/
+   ```
+ <br/>
+ <br/><h6><u>TEST :-</u> </h6><br/>
+ ![image](https://user-images.githubusercontent.com/61331272/141075551-f52a26b5-64a1-43b2-ac8d-b14134c6f3bf.png)
+ <br/>
+ ```
+ select adder(12,8) as sum from DUAL;
+ ```
+ <br/>
+
  
  
 
