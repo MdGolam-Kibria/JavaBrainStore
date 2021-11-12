@@ -86,7 +86,7 @@
  
  ![image](https://user-images.githubusercontent.com/61331272/140170513-d637c3f8-f214-48ad-8ab0-66928c4fc3a1.png)
  
-</p><br/><br/>
+</p><br/>
 
 
 <b>3)How to call a procedure for a spring  application<br/></b>
