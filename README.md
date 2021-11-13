@@ -250,4 +250,52 @@ end;
 
  
  
+<b>7)Call a procedure inside a <b>FUNCTION</b> for get employee by ID<br/></b>
+<b><u>Answer :- </u></b> <br/><h6><u>Procedure:-</u> </h6><br/>
+
+ ![image](https://user-images.githubusercontent.com/61331272/141611012-0817e928-308b-4914-8647-009d09eaccb3.png)
+ <br/>
+ ```
+ create procedure getEmployeeAllInsideFunctionCall(
+    empl_idd IN EMPLOYEE.ID%type,
+    e_disp OUT SYS_REFCURSOR
+)
+    is
+begin
+    e_disp := getEmployee(empl_idd);
+end;
+/
+ ```
+  <br/>
+ <br/><p><u>Function :-</u> </p><br/>  
+ ![image](https://user-images.githubusercontent.com/61331272/141611059-ede80b61-25bb-424e-8450-58c94c5a33fa.png)
+ <br/>  
+ ```
+ create function getEmployee(
+    emp_id EMPLOYEE.ID%type
+) return SYS_REFCURSOR
+    is
+    -- hasEmployee      number;
+    expectedEmployee SYS_REFCURSOR;
+begin
+    --  select count(*) into hasEmployee from EMPLOYEE where ID = emp_id;
+
+    open expectedEmployee for select * from EMPLOYEE where ID = emp_id;
+    if SQL%FOUND then
+        return expectedEmployee;
+    end if;
+    if SQL%NOTFOUND then
+        open expectedEmployee for select * from EMPLOYEE where 4 = 6;
+        return expectedEmployee;
+    end if;
+    return expectedEmployee;
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('EMPLOYEE find error');
+end;
+/
+ ```
+
+
+      
 
