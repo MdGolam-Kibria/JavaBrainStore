@@ -268,8 +268,12 @@ end;
  ```
   <br/>
  <br/><p><u>Function :-</u> </p><br/>  
- ![image](https://user-images.githubusercontent.com/61331272/141611059-ede80b61-25bb-424e-8450-58c94c5a33fa.png)
+
+![image](https://user-images.githubusercontent.com/61331272/141611059-ede80b61-25bb-424e-8450-58c94c5a33fa.png)
+
  <br/>  
+ 
+ 
  ```
  create function getEmployee(
     emp_id EMPLOYEE.ID%type
