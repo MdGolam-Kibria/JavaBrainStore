@@ -308,6 +308,7 @@ end;
 <b><u>Answer :- </u></b> <br/><h6><u>All Query:-</u> </h6><br/>
    
  <br/>
+ 
  ```
   CREATE SEQUENCE IncrementId
     INCREMENT BY 10
