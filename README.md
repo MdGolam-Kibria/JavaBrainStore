@@ -299,6 +299,70 @@ EXCEPTION
 end;
 /
  ```
+ 
+ <br/>
+
+ 
+ 
+<b>8)Create a Sequence and use and use it as a  table id and and create a view 🎥 that will return a result by joining multiple table and call the view from a procedure and call it from your application  <br/></b>
+<b><u>Answer :- </u></b> <br/><h6><u>All Query:-</u> </h6><br/>
+   
+ <br/>
+ ```
+  CREATE SEQUENCE IncrementId
+    INCREMENT BY 10
+    START WITH 10
+    MINVALUE 10
+    MAXVALUE 100
+    CYCLE
+    CACHE 2;
+
+
+CREATE TABLE Persons
+(
+    id   int,
+    lastName varchar(255),
+    fastName varchar(255),
+    area varchar(255),
+    address varchar(255)
+);
+
+CREATE TABLE PersonsProfession
+(
+    PersonID   int,
+    Profession varchar(255)
+);
+
+insert into PERSONS values (INCREMENTID.nextval, 'Kibria', 'Golam', 'Tejgaon', 'Dhaka');--[INCREMENTID.nextval] call the SEQUENCE here
+INSERT INTO PersonsProfession values (40, 'Teacher');
+INSERT INTO PersonsProfession values (50, 'Engineer');
+INSERT INTO PersonsProfession values (60, 'Doctor');
+
+
+create or REPLACE VIEW PersonDetails
+AS
+SELECT p.*, pd.*
+from PERSONS p
+         left join PersonsProfession pd on p.ID = pd.PERSONID
+order by p.ID desc;
+
+
+create or replace procedure getPersonByCallingView(
+    id_in IN PERSONS.ID%type,
+    e_disp OUT SYS_REFCURSOR
+) IS
+    hasPerson number;
+BEGIN
+    hasPerson := 0;
+    SELECT count(*) into hasPerson from PERSONDETAILS pd where pd.ID = id_in;
+    IF hasPerson <> 0 THEN --here <> means !=
+        OPEN e_disp FOR SELECT * from PERSONDETAILS pd where pd.ID = id_in;
+    ELSE
+        --return empty SYS_REFCURSOR couse 1=2 not equal always
+        OPEN e_disp FOR SELECT * FROM EMPLOYEE WHERE 1 = 2;
+    END IF;
+END getPersonByCallingView;
+ ```
 
 
       
