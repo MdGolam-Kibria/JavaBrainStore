@@ -364,6 +364,28 @@ BEGIN
     END IF;
 END getPersonByCallingView;
  ```
+ 
+  <br/>
+
+ 
+ 
+<b>9)Select column values based on condition and check if any value is null replace it as 'This is null' in Oracle <br/></b>
+<b><u>Answer :- </u></b> <br/><h6><u>All Query:-</u> </h6><br/>
+   ![image](https://user-images.githubusercontent.com/61331272/141830877-8d47cd68-1963-4f0c-99b3-961d613f5f0b.png)
+ 
+ ```
+  select CASE
+           when e.ID = 7 then
+               'This is 7'
+           else 'This is not seven'
+           end
+           as conditionResult,--This is one kind of conditions
+       decode(e.ID,22,222,55,555) as conditionalId,--This is another type of conditions(here logic is if id 22 then it shows 222 otherwise if id is 55 it will show 555 )
+       e.id,
+       NVL(NAME, 'Name is null') as nullCheckName,
+       email
+from EMPLOYEE e;
+ ```
 
 
       
