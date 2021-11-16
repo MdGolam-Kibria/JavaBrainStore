@@ -37,8 +37,52 @@
   <b>9) Difference JPA and JDBC with explain details with example.<br/></b>
      <b><u>Answer:- </u></b> <br/><h6><u>JPA and JDBC :-</u> </h6> 
      @https://www.baeldung.com/jpa-vs-jdbc
+     
+  <b>10) Convert Sql result array to expected JSON onject using Reflection API 🔥 <br/></b>
+     <b><u>Answer:- </u></b> <br/><h6><u>JPA and JDBC :-</u> </h6> 
+     ![image](https://user-images.githubusercontent.com/61331272/141931760-6301ad9f-3672-44e6-9003-f094fc9ad145.png)
+     </b>
+     
+     ```
+     /**
+     * Common method for getData from database using entity Manager
+     */
+    @Service
+    public class EntityManagerQueryHelper {
+
+    @PersistenceContext
+    private EntityManager entityManager;
 
 
+    public Collection<Object> getQueryResult(String sql, Object expectedConvertedPojoClass) {
+        Query query = entityManager.createNativeQuery(sql);
+        /**
+         * here expectedConvertedPojoClass model must look like the [query.getResultList()] value serial
+         */
+        return convertToModelObject(query.getResultList(), expectedConvertedPojoClass);
+    }
+
+    public Collection<Object> convertToModelObject(List resultList, Object expectedConvertedPojoClass) {//expectedConvertedPojoClass property should be same as your( sql output) serial value
+        try {
+
+            List<Object> objects = new ArrayList<>();
+            for (int o = 0; o < resultList.size(); o++) {
+                Field[] allPro = expectedConvertedPojoClass.getClass().getDeclaredFields();
+                Map<Object, Object> properties = new HashMap<>();
+                for (int i = 0; i < allPro.length; i++) {
+                    properties.put(expectedConvertedPojoClass.getClass().getDeclaredFields()[i].getName(), ((Object[]) resultList.get(o))[i]);
+                }
+                objects.add(properties);
+            }
+            return objects;
+        } catch (Exception e) {
+            return null;
+        }
+    }
+}
+     ```
+
+</b>
 # <h1><b><center> <b><u>About Multithreading / Concurrency programming in Java ?🙋</u></b></center> </b></h1>
 
 
