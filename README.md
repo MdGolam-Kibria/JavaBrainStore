@@ -39,7 +39,7 @@
      @https://www.baeldung.com/jpa-vs-jdbc
      
   <b>10) Convert Sql result array to expected JSON Object using <b>Reflection API </b> 🔥 <br/></b>
-     <b><u>Answer:- </u></b> <br/><h6><u>JPA and JDBC :-</u> </h6> 
+     <b><u>Answer:- </u></b> <br/><h6><u>Reflection API with example :-</u> </h6> 
      ![image](https://user-images.githubusercontent.com/61331272/141931760-6301ad9f-3672-44e6-9003-f094fc9ad145.png)
      </b>
      
