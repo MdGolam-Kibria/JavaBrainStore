@@ -480,7 +480,11 @@ from EMPLOYEE e;
 ```
 
 </b>
+   
    ![image](https://user-images.githubusercontent.com/61331272/147458448-b048f7aa-0352-444d-ac96-86188ce0d23f.png) 
+
+</b>
+   
  ```
 SELECT
   AT.METADATA
