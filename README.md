@@ -433,6 +433,64 @@ END getPersonByCallingView;
        email
 from EMPLOYEE e;
  ```
+ 
+ 
+ <b>10)Parse data from json using JSON_VALUE() PL/SQL <br/></b>
+<b><u>Answer :- </u></b> <br/><h6><u>All Query:-</u> </h6><br/>
+<u>JSON demo</u></b>
+
+```
+{
+  "collectionType": 0,
+  "billInfo": {
+    "BANK_BRANCH_CODE": "",
+    "COMMISSIONARATES_CODE": "437689ewr234",
+    "APPELLATE_TRIBUNAL": "",
+    "ECONOMIC_CODE": "0601",
+    "APPELLTE": "",
+    "EMAIL": "abc@gmail.com",
+    "TEL_NUMBER": "01723000033",
+    "APPELLTE_CODE": "",
+    "PERSL": "",
+    "TAX_PERIOD_MONTH": "November",
+    "AMOUNT": "21.0",
+    "FUNCTION_CODE": "23424",
+    "PURPOSE_CODE": "",
+    "PURPOSE_DATE": "",
+    "LEGAL_CODE": "1",
+    "TAX_TYPE_CODE": "1601",
+    "PURPOSE_NO": "",
+    "TAX_PERIOD_YEAR": "2020",
+    "TXT50": "",
+    "BIN": "34234-0503",
+    "VDS_OPTION": "",
+    "VDS_SING_BIN": "",
+    "TRANSACTION_TYPE": "T",
+    "NAME": "SUMON GARMNETS TWO",
+    "OPERATION_CODE": "234",
+    "PERIOD": "",
+    "ADDRESS": " 234324 kajipara; 234 PS; Chittagong-4000; Bangladesh",
+    "TAX_TYPE_NAME": "",
+    "APPELE_DESC": "",
+    "COMMISSIONARATES_NAME": "Large Taxpayer Unit - VAT"
+  },
+  
+  "billerCode": "vat"
+}
+```
+
+</b>
+   ![image](https://user-images.githubusercontent.com/61331272/147458448-b048f7aa-0352-444d-ac96-86188ce0d23f.png) 
+ ```
+SELECT
+  AT.METADATA
+FROM
+  CORP_APPROVED_TRANSACTION AT
+WHERE
+  AT.METADATA IS NOT NULL
+  AND JSON_VALUE(AT.METADATA, '$.billerCode') = 'vat'
+  AND JSON_VALUE(AT.METADATA, '$.billInfo.EMAIL') = 'abc@gmail.com';
+ ```
 
 
       
