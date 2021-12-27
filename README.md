@@ -495,7 +495,9 @@ WHERE
   AND JSON_VALUE(AT.METADATA, '$.billerCode') = 'vat'
   AND JSON_VALUE(AT.METADATA, '$.billInfo.EMAIL') = 'abc@gmail.com';
  ```
+</b>
+<b>Another example:- </b></br>
 
+  ![image](https://user-images.githubusercontent.com/61331272/147461183-869c6237-1fa4-401a-895f-7fc4c765ec3d.png)
 
-      
 
