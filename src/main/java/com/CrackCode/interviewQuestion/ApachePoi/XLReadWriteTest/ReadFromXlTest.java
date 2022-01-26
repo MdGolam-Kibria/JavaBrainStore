@@ -29,7 +29,7 @@ public class ReadFromXlTest {
         final byte ADDRESS = 3;
 
 
-        xlReader.setContentReadListener(4, new ContentReadListener() {
+        xlReader.setContentReadListener(4/*Number of cell like here {name,email,phone,address} total 4 that's why pass 4 here*/, new ContentReadListener() {
             @Override
             public void afterRowRead(int rowIndex, String[] values) {
                 if (rowIndex == 0) {
