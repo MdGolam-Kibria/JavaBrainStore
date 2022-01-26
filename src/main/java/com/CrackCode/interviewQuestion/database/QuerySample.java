@@ -1,14 +1,17 @@
 package com.CrackCode.interviewQuestion.database;
 
+/**
+ * Comment All code only for java version
+ */
 public class QuerySample {
-    /**
+ /*   *//**
      * For get multiple table with hard business handle with single query(see brac bank standUpMeeting project QueryConstraint class)
-     */
+     *//*
 
 
-    /**
+    *//**
      * For UPDATE multiple table sample (Sample Collect From My Brac bank project)
-     */
+     *//*
     public static final String UPDATE_COMMENT_AND_DAILY_STATUS_CREATOR_BY_CREATED_BY_ID = """
             UPDATE comment c,
                 daily_status ds
@@ -18,9 +21,9 @@ public class QuerySample {
             WHERE
                 c.created_by = :createdById AND ds.created_by = :createdById
             """;
-    /**
+    *//**
      * For UPDATE multiple table using joining query with much more business logic
-     */
+     *//*
     public static final String UPDATE_JOIN_TABLE= """
             UPDATE t1
             INNER JOIN t2 ON t2.t1_id = t1.id
@@ -30,9 +33,9 @@ public class QuerySample {
                 t3.c = t2.c
             WHERE t1.a = 'blah';
             """;
-    /**
+    *//**
      * For UPDATE with join and sub join logic
-     */
+     *//*
     public static final String UPDATE_SUB_JOIN= """
             UPDATE Region
             SET
@@ -50,9 +53,9 @@ public class QuerySample {
               ) r ON r.ID = Region.ID
             """;
 
-    /**
+    *//**
      * For DELETE data from multiple table using join sample 1
-     */
+     *//*
     public static final String DELETE_MULTIPLE_TABLE_JOIN= """
             DELETE T1, T2
             FROM T1
@@ -60,9 +63,9 @@ public class QuerySample {
             WHERE condition
             """;
 
-    /**
+    *//**
      * For DELETE data from multiple table using join sample 2
-     */
+     *//*
     public static final String DELETE_MULTIPLE_TABLE= """
             DELETE
                             FROM
@@ -74,5 +77,5 @@ public class QuerySample {
                             WHERE
                                 Student.studentId= 51;
             """;
-
+*/
 }

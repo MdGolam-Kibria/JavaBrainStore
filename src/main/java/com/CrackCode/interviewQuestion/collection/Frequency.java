@@ -16,12 +16,13 @@ public class Frequency {
         /**
          * count sum of the list
          */
-        var sum = list.parallelStream().mapToLong(value -> value).sum();
+        double sum = list.parallelStream().mapToLong(value -> value).sum();
         System.out.println(sum);
         /**
          * count average of the list
+         * here code comment only for ava version
          */
-        var average = list.parallelStream().mapToInt(value -> value).average();
-        System.out.println(average.getAsDouble());
+       /* var average = list.parallelStream().mapToInt(value -> value).average();
+        System.out.println(average.getAsDouble());*/
     }
 }

@@ -14,6 +14,13 @@ public class Student implements ObjectBridge {
     private String role;
     private String address;
 
+    public Student(String name, String email, String phone, String address) {
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.address = address;
+    }
+
     @Override
     public ObjectBridge copy() {
         return this;
