@@ -2,7 +2,9 @@ package com.CrackCode.interviewQuestion.designPattern.Prototype;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
 @AllArgsConstructor
 @Data
 public class Student implements ObjectBridge {
