@@ -1,7 +1,7 @@
-package com.CrackCode.ApachePoi.XLfileReadWrite.XLReadWriteTest;
+package com.CrackCode.Apache.XLfileReadWrite.XLReadWriteTest;
 
-import com.CrackCode.ApachePoi.XLfileReadWrite.ContentReadListener;
-import com.CrackCode.ApachePoi.XLfileReadWrite.ExcelFileWriter;
+import com.CrackCode.Apache.XLfileReadWrite.ContentReadListener;
+import com.CrackCode.Apache.XLfileReadWrite.ExcelFileWriter;
 import com.CrackCode.designPattern.Prototype.Student;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,6 +10,19 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+/*
+@TODO need those 2 dependency for implement this operation
+<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.10-FINAL</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.10-FINAL</version>
+		</dependency>
+ */
 @RestController
 public class WriteToXlTest {
     @GetMapping("/writeStudentInfoTOxLFile")
