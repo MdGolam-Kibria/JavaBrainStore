@@ -62,7 +62,7 @@ public class CSVReader {
     }
 
     public CSVParser getCsvDataListWithoutHeaders(String fileName) throws IOException {
-        Reader reader = Files.newBufferedReader(Paths.get(SAMPLE_CSV_FILE_PATH));
+        Reader reader = Files.newBufferedReader(Paths.get(fileName));
         CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT
                 .withFirstRecordAsHeader()
                 .withIgnoreHeaderCase()

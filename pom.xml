@@ -15,6 +15,7 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
+		<jasper.version>6.9.0</jasper.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -52,6 +53,12 @@
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-csv</artifactId>
 			<version>1.5</version>
+		</dependency>
+<!--Below 1 maven for generate report-->
+		<dependency>
+			<groupId>net.sf.jasperreports</groupId>
+			<artifactId>jasperreports</artifactId>
+			<version>${jasper.version}</version>
 		</dependency>
 
 

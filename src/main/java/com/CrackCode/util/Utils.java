@@ -23,7 +23,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
-@Component
+//@Component
 public class Utils {
     public static final Pattern VALID_EMAIL_ADDRESS_REGEX =
             Pattern.compile("^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w-_]+\\.)+[\\w]+[\\w]$", Pattern.CASE_INSENSITIVE);
@@ -35,16 +35,16 @@ public class Utils {
     private static final String maxSignatoryRegex = "([A-Z]([0-9]{1,2}))";
     private static final Pattern maxSignatoryPattern = Pattern.compile(maxSignatoryRegex);
 
-    @Value("${maximum.file.row.size}")
-    private int maximumFileRowSize;
+ /*   @Value("${maximum.file.row.size}")
+    private int maximumFileRowSize;*/
 
     private static int MAX_FILE_ROW_SIZE;
 
-    @PostConstruct
+   /* @PostConstruct
     public void init() {
         MAX_FILE_ROW_SIZE = maximumFileRowSize;
     }
-
+*/
     private static DecimalFormat df = new DecimalFormat("0.00");
     public static String decrypt(String hashedText){
         String text = "";
