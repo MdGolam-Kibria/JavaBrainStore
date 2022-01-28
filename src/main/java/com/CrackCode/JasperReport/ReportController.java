@@ -29,8 +29,8 @@ import java.util.*;
 @RestController
 public class ReportController {
 
-    @GetMapping("/jasparReportPdf/{expectation}")//here expectation = html/pdf
-    public String addFile(@PathVariable("expectation") String expectation) throws IOException, JRException {
+    @GetMapping("/jasparReport/{expectation}")//here expectation = html/pdf
+    public String GenerateReport(@PathVariable("expectation") String expectation) throws IOException, JRException {
 
         /**
          * 1st get Data From A CSV File
