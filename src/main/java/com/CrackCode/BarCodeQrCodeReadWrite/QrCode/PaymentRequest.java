@@ -1,4 +1,4 @@
-package com.CrackCode.BarCodeQrCodeGenerator.QrCode;
+package com.CrackCode.BarCodeQrCodeReadWrite.QrCode;
 
 import lombok.Data;
 

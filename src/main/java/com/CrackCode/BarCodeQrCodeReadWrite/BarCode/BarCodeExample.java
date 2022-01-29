@@ -1,6 +1,6 @@
-package com.CrackCode.BarCodeQrCodeGenerator.BarCode;
+package com.CrackCode.BarCodeQrCodeReadWrite.BarCode;
 
-import com.CrackCode.BarCodeQrCodeGenerator.QrCode.QrCodeExample;
+import com.CrackCode.BarCodeQrCodeReadWrite.QrCode.QrCodeExample;
 import com.google.zxing.*;
 import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
 import com.google.zxing.client.j2se.MatrixToImageWriter;
