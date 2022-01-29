@@ -2,37 +2,37 @@
 
  <b>1) What is Serialization and deserialization ? <br/></b> 
       <b><u>Answer:- </u></b> <br/>
-     @https://github.com/MdGolam-Kibria/interviewQuestion/tree/master/src/main/java/com/CrackCode/interviewQuestion/SerializationDeserialization <br/>
+     @https://github.com/MdGolam-Kibria/JavaBrainStore/tree/master/src/main/java/com/CrackCode/SerializationDeserialization <br/>
      
  <b>2)Polymorphism in java ? How can we achieve Polymorphism  ?<br/></b> 
  <b><u>Answer:- </u></b> <br/>
- @https://github.com/MdGolam-Kibria/interviewQuestion/tree/master/src/main/java/com/CrackCode/interviewQuestion/Polymorphism <br/>
+ @https://github.com/MdGolam-Kibria/interviewQuestion/tree/master/src/main/java/com/CrackCode/Polymorphism <br/>
 
  <b>4) What About Singleton pattern in java ? Types of singleton ? and How can we achieve that ? <br/></b> 
       <b><u>Answer:- </u></b> <br/>
-     @https://github.com/MdGolam-Kibria/interviewQuestion/tree/master/src/main/java/com/CrackCode/interviewQuestion/designPattern/SingletonPattern <br/>
+     @https://github.com/MdGolam-Kibria/interviewQuestion/tree/master/src/main/java/com/CrackCode/designPattern/SingletonPattern <br/>
  
  
  <b>5) Difference  between factory and abstract factory pattern ? <br/></b> 
       <b><u>Answer:- </u></b> <br/><h6><u>Factory Pattern</u> </h6><br/>
-      @https://github.com/MdGolam-Kibria/interviewQuestion/tree/master/src/main/java/com/CrackCode/interviewQuestion/designPattern/Factory <br/>
+      @https://github.com/MdGolam-Kibria/interviewQuestion/tree/master/src/main/java/com/CrackCode/designPattern/Factory <br/>
       <h6><u>Abstract Factory Pattern</u> </h6><br/>
-      @https://github.com/MdGolam-Kibria/interviewQuestion/tree/master/src/main/java/com/CrackCode/interviewQuestion/designPattern/abstractFactory <br/>
+      @https://github.com/MdGolam-Kibria/interviewQuestion/tree/master/src/main/java/com/CrackCode/designPattern/abstractFactory <br/>
       
       
 <b>6) What is the Prototype Pattern ? <br/></b> 
       <b><u>Answer:- </u></b> <br/><h6><u>Prototype Pattern :-</u> </h6><br/>
-      @https://github.com/MdGolam-Kibria/interviewQuestion/tree/master/src/main/java/com/CrackCode/interviewQuestion/designPattern/Prototype <br/>
+      @https://github.com/MdGolam-Kibria/interviewQuestion/tree/master/src/main/java/com/CrackCode/designPattern/Prototype <br/>
       
       
  <b>7) What is the Builder Pattern ? <br/></b> 
       <b><u>Answer:- </u></b> <br/><h6><u>Builder Pattern :-</u> </h6><br/>
-      @https://github.com/MdGolam-Kibria/interviewQuestion/tree/master/src/main/java/com/CrackCode/interviewQuestion/designPattern/BuilderPattern <br/>
+      @https://github.com/MdGolam-Kibria/interviewQuestion/tree/master/src/main/java/com/CrackCode/designPattern/BuilderPattern <br/>
       
       
  8) <h4>🔥🔥🔥 Java 8 All features like everything about [<b>🦸‍♂️Stream API</b>, <b>🦸‍♂️Optional class</b>, <b>🦸‍♂️Functional Interface</b>, <b>🦸‍♂️lambda</b>,<b>🦸‍♂️Predicate</b>] 🔥🔥🔥🔥</h4><br/>
       <b><u>Answer:- </u></b> <br/><h6><u>Everything About JAVA 8 :-</u> </h6><br/>
-      @https://github.com/MdGolam-Kibria/interviewQuestion/tree/master/src/main/java/com/CrackCode/interviewQuestion/java8 <br/>
+      @https://github.com/MdGolam-Kibria/interviewQuestion/tree/master/src/main/java/com/CrackCode/java8 <br/>
 
   <b>9) Difference JPA and JDBC with explain details with example.<br/></b>
      <b><u>Answer:- </u></b> <br/><h6><u>JPA and JDBC :-</u> </h6> 
