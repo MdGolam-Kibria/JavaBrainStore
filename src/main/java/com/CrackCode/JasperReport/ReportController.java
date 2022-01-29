@@ -82,6 +82,7 @@ public class ReportController {
         for (CSVRecord currentCsvData : csvDataWithoutHeaders) {
             Employee employee = new Employee();
             employee.setId(i+1);
+            i+=1;
             employee.setName(""+currentCsvData.get(0));
             employee.setEmail(""+currentCsvData.get(1));
             employee.setMobile(""+currentCsvData.get(2));
