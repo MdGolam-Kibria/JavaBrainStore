@@ -499,5 +499,55 @@ WHERE
 <b>Another example:- </b></br>
 
   ![image](https://user-images.githubusercontent.com/61331272/147461183-869c6237-1fa4-401a-895f-7fc4c765ec3d.png)
+  
+  
+  
+   <b>10)How to run a sql script for multiple operation without creating procedure  <br/></b>
+<b><u>Answer :- </u></b> <br/>
+
+```
+DECLARE
+    cursor allCallCenterAndAllOPS
+    IS
+    select * from USERS where USER_TYPE in (6,7,2,3);
+BEGIN
+    FOR callCenterOrOps IN allCallCenterAndAllOPS
+    LOOP
+        INSERT
+        INTO NOTIFICATION_COMPANY_CONFIG (
+                                          ID,
+                                          COMPANY_ID,
+                                          EVENT_ID,
+                                          IS_SMS,
+                                          IS_EMAIL,
+                                          IS_ACTIVE,
+                                          USER_ID,
+                                          CREATEDAT,
+                                          CREATEDBY,
+                                          UPDATEDAT,
+                                          UPDATEDBY,
+                                          FUTURE_STATUS,
+                                          OLD_STATUS,
+                                          REJECT_REASON)
+        VALUES (
+                NOTI_COMP_CFG_SEQ.nextval,--ID
+                1,--companyId
+                48,--eventId
+                0,--IS_SMS
+                1,--IS_EMAIL
+                1,--IS_ACTIVE
+                callCenterOrOps.ID,--USER_ID
+                sysdate,--CREATEDAT
+                null,--CREATEDBY
+                null,--UPDATEDAT
+                null,--UPDATEDBY
+                null,--FUTURE_STATUS
+                null,--OLD_STATUS
+                null--REJECT_REASON
+                );
+        DBMS_OUTPUT.PUT_LINE('USER_ID' || callCenterOrOps.ID);
+    END LOOP;
+END;
+```
 
 
