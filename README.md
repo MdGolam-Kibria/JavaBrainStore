@@ -561,3 +561,46 @@ ALTER TABLE STUDENT DROP COLUMN NAME;--FOR DELETE [NAME] COLUMN FROM STUDENT TAB
 ALTER TABLE STUDENT ADD NAME VARCHAR2(255);--FOR ADD [NAME] COLUMN FROM STUDENT TABLE.
 ```
 
+
+   <b>13)How to create multiple CREATE and UPDATE query using ORACLE QUERY ? <br/></b>
+<b><u>Answer :- </u></b> <br/>
+
+<b>NOTE:we didn't write logic here. :(</b>
+
+```
+DECLARE
+  L_CNT PLS_INTEGER;
+BEGIN
+  SELECT COUNT(0)
+  INTO L_CNT
+  FROM ALL_TABLES T
+  WHERE T.TABLE_NAME = 'SERVICE_REQUEST_TYPE';
+
+  IF L_CNT > 0 THEN
+
+       RETURN ;
+  END IF;
+-- FOR CREATE A TABLE
+        EXECUTE IMMEDIATE '
+                CREATE TABLE SERVICE_REQUEST_TYPE
+                    (ID NUMBER not null constraint SERVICE_REQUEST_TYPE_PK primary key,
+                               REQUEST_NAME VARCHAR2(50),
+                               REQUEST_CATEGORY NUMBER not null,
+                               CODE NUMBER,
+                               CREATED_AT TIMESTAMP(6) not null,
+                                CREATED_BY NUMBER not null,
+                                UPDATED_AT TIMESTAMP(6),
+                                UPDATED_BY NUMBER)
+        ';
+--FOR INSERT DATA TO JUST CREATED TABLE
+        EXECUTE IMMEDIATE '
+          INSERT INTO SERVICE_REQUEST_TYPE(ID,REQUEST_NAME,REQUEST_CATEGORY,CODE,CREATED_AT,CREATED_BY, UPDATED_AT,UPDATED_BY)
+                       VALUES (1,''HARDWATRE'',2,120,sysdate,300,null,null)
+        ';
+  EXECUTE IMMEDIATE '
+        UPDATE SERVICE_REQUEST_TYPE SET REQUEST_NAME = ''SOFTWARE'' where REQUEST_NAME is not null
+';
+END;
+```
+
+
