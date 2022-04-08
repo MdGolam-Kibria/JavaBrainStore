@@ -502,7 +502,7 @@ WHERE
   
   
   
-   <b>10)How to run a sql script for multiple operation without creating procedure  <br/></b>
+   <b>11)How to run a sql script for Multiple operation without creating procedure in oracle  <br/></b>
 <b><u>Answer :- </u></b> <br/>
 
 ```
@@ -550,4 +550,14 @@ BEGIN
 END;
 ```
 
+
+ 
+   <b>12)How to delete a  COLUMN and ADD a COLUMN using Query in oracle <br/></b>
+<b><u>Answer :- </u></b> <br/>
+
+```
+ALTER TABLE STUDENT DROP COLUMN NAME;--FOR DELETE [NAME] COLUMN FROM STUDENT TABLE.
+
+ALTER TABLE STUDENT ADD NAME VARCHAR2(255);--FOR ADD [NAME] COLUMN FROM STUDENT TABLE.
+```
 
