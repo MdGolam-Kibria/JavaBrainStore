@@ -20,7 +20,7 @@ public class INNER_JOIN_WORKER {
         this.childRepository = childRepository;
     }
 
-    @PostConstruct
+    //@PostConstruct
     public void add() {
         if (parentRepository.countAllByIsActiveTrue() < 2) {
             Parent parent = new Parent();

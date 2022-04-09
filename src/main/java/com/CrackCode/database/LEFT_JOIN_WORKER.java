@@ -19,7 +19,7 @@ public class LEFT_JOIN_WORKER {
         this.orderRepository = orderRepository;
     }
 
-    @PostConstruct
+   //@PostConstruct
     public void setDate() {
         Customer customer = new Customer();
         customer.setName("manik");

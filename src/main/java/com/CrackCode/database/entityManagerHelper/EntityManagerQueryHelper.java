@@ -1,6 +1,5 @@
 package com.CrackCode.database.entityManagerHelper;
 
-import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
