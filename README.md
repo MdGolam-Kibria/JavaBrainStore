@@ -604,3 +604,38 @@ END;
 ```
 
 
+   <b>13)How to create oracle databse sequence and use it in a java application? <br/></b>
+<b><u>Answer :- </u></b> <br/>
+
+<b>CREATE SEQUENCE</b>
+
+```
+create sequence SERVICE_REQUEST_TYPE_SEQ
+    order
+    nocache
+/
+```
+<br/>
+
+<b>CREATE SEQUENCE  generator</b>
+
+```
+create trigger SERVICE_REQUEST_TYPE_SEQ_GEN
+    before insert
+    on SERVICE_REQUEST_TYPE
+    for each row
+BEGIN
+    IF :NEW.ID = NULL OR :NEW.ID<0 THEN
+        SELECT SERVICE_REQUEST_TYPE_SEQ.NEXTVAL
+        INTO :NEW.ID
+        FROM DUAL;
+        END IF;
+END;
+```
+
+<b>USE SQUENCE IN JAVA APPLICATION</b>
+
+![image](https://user-images.githubusercontent.com/61331272/162560969-4e59899e-739d-495e-a6dd-22218939754a.png)
+
+
+
