@@ -604,7 +604,7 @@ END;
 ```
 
 
-   <b>13)How to create oracle databse sequence and use it in a java application? <br/></b>
+   <b>13)How to create ORACLE database sequence and use it in a java application? <br/></b>
 <b><u>Answer :- </u></b> <br/>
 
 <b>CREATE SEQUENCE</b>
