@@ -13,7 +13,7 @@ public class ModelToXml {
     public static void main(String[] args) {
         Transaction transaction = Transaction.builder()
                 .reason("For Pojo Xml Convert Test")
-                .amount(BigDecimal.ONE).build();
+                .amount(BigDecimal.valueOf(9879.8798)).build();
         System.out.println(jaxbObjectToXML(transaction));//Specific Model Class
         System.out.println(modelToXML(transaction));//Any Object Class
     }
