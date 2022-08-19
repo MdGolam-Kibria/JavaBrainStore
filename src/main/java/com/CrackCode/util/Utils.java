@@ -956,6 +956,22 @@ public class Utils {
         return Stream.concat(Arrays.stream(array1), Arrays.stream(array2))
                 .toArray(size -> (T[]) Array.newInstance(array1.getClass().getComponentType(), size));
     }
+       
+    
+    public static List<String> getDuplicateValues(List<String> accountList) {
+        /*This method will return duplicate values from the list.
+        EXAMPLE:
+         Input = 1,2,3,1,2,2
+         Output = 1,2
+         Explanation: result will be 1,2 because 1 and 2 are duplicate values
+         */
+        return accountList.stream().collect(Collectors.groupingBy(Function.identity()))
+                .entrySet()
+                .stream()
+                .filter(e -> e.getValue().size() > 1)
+                .map(Map.Entry::getKey)
+                .collect(Collectors.toList());
+    }
 
 
 }
