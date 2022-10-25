@@ -638,4 +638,12 @@ END;
 ![image](https://user-images.githubusercontent.com/61331272/162560969-4e59899e-739d-495e-a6dd-22218939754a.png)
 
 
+  <b>15)How to get only date form current date and increment/decrement day using <b>ORACLE</b> query <br/></b>
+<b><u>Answer :- </u></b> <br/>
+
+```
+SELECT TRUNC(SYSDATE-5) FROM DUAL;
+```
+
+
 
