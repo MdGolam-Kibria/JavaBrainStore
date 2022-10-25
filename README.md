@@ -645,5 +645,13 @@ END;
 SELECT TRUNC(SYSDATE-5) FROM DUAL;
 ```
 
+ <b>16)get 3rd high salary using <b>ORACLE</b> query <br/></b>
+<b><u>Answer :- </u></b> <br/>
+
+```
+SELECT n.TOTAL_BBL_AMT FROM (SELECT TOTAL_BBL_AMT
+FROM CORP_FILE_UPLOAD_INFO
+order by TOTAL_BBL_AMT DESC) n offset 3 rows fetch next 1 rows only;
+```
 
 
