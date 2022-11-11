@@ -655,3 +655,36 @@ order by TOTAL_BBL_AMT DESC) n offset 3 rows fetch next 1 rows only;
 ```
 
 
+ <b>17)get one to many table data using <b>MS SQL</b> query <br/></b>
+<b><u>Answer :- </u></b> <br/>
+
+```
+SELECT
+    STRING_AGG(PN.phone,
+    ',') as phoneNumber,--wil get result as comma separeted value like (01776767656,01531425247) 
+    c.* 
+FROM
+    companies C          
+left join
+    phone_numbers PN 
+        ON C.id = PN.companyid 
+group by
+    C.id,
+    C.created_at,
+    C.created_by,
+    C.deleted_at,
+    C.deleted_by,
+    C.is_active,
+    C.updated_at,
+    C.updated_by,
+    C.address,
+    C.email,
+    C.name,
+    C.tin; 
+```
+
+
+
+
+
+
