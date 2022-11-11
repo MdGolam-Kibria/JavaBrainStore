@@ -683,8 +683,15 @@ group by
     C.tin; 
 ```
 
+##If we want to short the comma separated value the SQL will be <br/>
 
-
+```
+SELECT STRING_AGG(PN.phone, ',') WITHIN GROUP (ORDER BY PN.phone) as phoneNumber, c.*
+FROM companies C
+         left join phone_numbers PN ON C.id = PN.companyid
+group by C.id, C.created_at, C.created_by, C.deleted_at, C.deleted_by, C.is_active, C.updated_at, C.updated_by,
+         C.address, C.email, C.name, C.tin;
+```
 
 
 
