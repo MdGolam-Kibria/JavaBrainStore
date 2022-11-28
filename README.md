@@ -712,4 +712,18 @@ group by
 ```
 
 
+<b>18)if given value is null then return all otherwise return based on the given input using <b>ORACLE SQL</b> query <br/></b>
+<b><u>Answer :- </u></b> <br/>
+
+```
+SELECT * FROM USERS WHERE USERNAME= (
+    CASE WHEN :varname is null
+    THEN
+         USERNAME
+    ELSE
+        :varname
+    END
+)
+```
+
 
