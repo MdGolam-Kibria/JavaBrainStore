@@ -727,3 +727,12 @@ SELECT * FROM USERS WHERE USERNAME= (
 ```
 
 
+<b>19)get current time with sec.. and withour sec.. using <b>ORACLE SQL</b> query <br/></b>
+<b><u>Answer :- </u></b> <br/>
+
+```sql
+SELECT TO_CHAR( SYSDATE, 'HH12:MI:SS AM' ) as currentTimeWithSec FROM DUAL;--12:22:23 PM
+SELECT TO_CHAR( SYSDATE, 'HH12:MI AM' ) as currentTimeWithoutSec FROM DUAL;--12:20 PM
+```
+
+
