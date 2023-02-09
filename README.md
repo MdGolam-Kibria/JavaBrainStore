@@ -736,7 +736,7 @@ SELECT TO_CHAR( SYSDATE, 'HH12:MI AM' ) as currentTimeWithoutSec FROM DUAL;--12:
 ```
 
 
-<b>20) get bacup mysql db using command<br/></b>
+<b>20) get backup mysql db using command<br/></b>
 <b><u>Answer :- </u></b> <br/>
 
 ![image](https://user-images.githubusercontent.com/61331272/217799058-c043c1ad-4634-4a9f-a5f2-0c6db5777f41.png)
