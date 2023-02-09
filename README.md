@@ -747,4 +747,19 @@ SELECT TO_CHAR( SYSDATE, 'HH12:MI AM' ) as currentTimeWithoutSec FROM DUAL;--12:
 mysqldump -h localhost --user=root --password=yourPass --result-file=D:\gehi\mysql_dump\iss_gp.sql --databases iss_gp
 ```
 
+<b>21) get backup oracle db using command<br/></b>
+<b><u>Answer :- </u></b> <br/>
+
+![image](https://user-images.githubusercontent.com/61331272/217829121-ddadfcd0-dff9-4e35-98b8-b4166e432350.png)
+
+<br/>
+
+```
+expdp DPDC/DPDC@orcl schemas=DPDC directory=DATA_PUMP_DIR dumpfile=DPDC_2020_11_17.dmp logfile=DPDC_2020_11_17.log
+```
+
+```
+expdp uname/pass@orcl schemas=DPDC directory=DATA_PUMP_DIR dumpfile=DPDC_2020_11_17.dmp logfile=DPDC_2020_11_17.log
+```
+
 
