@@ -762,4 +762,28 @@ expdp DPDC/DPDC@orcl schemas=DPDC directory=DATA_PUMP_DIR dumpfile=DPDC_2020_11_
 expdp uname/pass@orcl schemas=DPDC directory=DATA_PUMP_DIR dumpfile=DPDC_2020_11_17.dmp logfile=DPDC_2020_11_17.log
 ```
 
+<b>21) parse comma separeted String to string arrary and make a lopp on that array using PLSQL <br/></b>
+<b><u>Answer :- </u></b> <br/>
+
+```
+    DECLARE
+      input_string VARCHAR2(100) := 'kibria,anika,manik';
+      string_array DBMS_SQL.VARCHAR2_TABLE;
+    BEGIN
+      FOR i IN 1..REGEXP_COUNT(input_string, ',') + 1 LOOP
+        string_array(i) := REGEXP_SUBSTR(input_string, '[^,]+', 1, i);
+      END LOOP;
+      
+      FOR i IN 1..string_array.COUNT LOOP
+        DBMS_OUTPUT.PUT_LINE(string_array(i));
+      END LOOP;
+    END;
+```
+
+
+![image](https://user-images.githubusercontent.com/61331272/227432760-ca3ab1c1-63e0-4b2b-a3eb-0680c21ee50e.png)
+
+
+
+
 
