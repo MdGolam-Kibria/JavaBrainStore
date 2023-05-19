@@ -785,5 +785,30 @@ expdp uname/pass@orcl schemas=DPDC directory=DATA_PUMP_DIR dumpfile=DPDC_2020_11
 
 
 
+<b>22) get second high salary using java stream api <br/></b>
+<b><u>Answer :- </u></b> <br/>
+
+```
+    public static void main(String[] args) {
+        int[] salaries = {100, 200, 500, 50, 30};
+        int secondHighestSalary = Arrays.stream(salaries)
+                .distinct() // Remove duplicates if any
+                .sorted()//30,50,100,200,500
+                .skip(salaries.length - 2) // Skip all without last 2 item = [200,500]
+                .findFirst()//200
+                .orElseThrow(null); // Throw an exception if no element is found
+
+        System.out.println("Second highest salary: " + secondHighestSalary);//expected:  200
+    }
+```
+
+![image](https://github.com/MdGolam-Kibria/JavaBrainStore/assets/61331272/835f431d-5921-45f0-9241-dfd89eb616db)
+
+
+
+
+
+
+
 
 
