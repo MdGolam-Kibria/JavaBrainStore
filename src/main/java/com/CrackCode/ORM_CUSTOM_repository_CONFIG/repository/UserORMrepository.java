@@ -1,11 +1,7 @@
 package com.CrackCode.ORM_CUSTOM_repository_CONFIG.repository;
 
-import com.CrackCode.ORM_CUSTOM_repository_CONFIG.BaseRepository;
 import com.CrackCode.ORM_CUSTOM_repository_CONFIG.dto.UserDetailsDto;
 import com.CrackCode.ORM_CUSTOM_repository_CONFIG.model.User;
-import org.hibernate.Query;
-import org.hibernate.transform.AliasToBeanResultTransformer;
-import org.hibernate.type.StandardBasicTypes;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -17,9 +13,9 @@ import java.util.stream.Collectors;
  * based on test on only CORE SPRING FRAMEWORK
  */
 @Repository//Must use this annotation in this custom ORM BaseRepository CASE
-public class UserORMrepository extends BaseRepository<User> {
+public class UserORMrepository  {
 
-    public List<User> getUserWithRoleDetails(){
+   /* public List<User> getUserWithRoleDetails(){
         String sql = "select\n" +
                 "    r.id as roleId,\n" +
                 "    r.name as roleName,\n" +
@@ -67,7 +63,7 @@ public class UserORMrepository extends BaseRepository<User> {
         }
         List<UserDetailsDto> userDetailsList = query.list();
         return dtoToEntity(userDetailsList);
-    }
+    }*/
 
     public List<User> dtoToEntity(List<UserDetailsDto> userDetailsList) {
         return userDetailsList.stream()

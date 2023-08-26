@@ -19,8 +19,10 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
+import java.util.function.Function;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 //@Component
@@ -286,7 +288,7 @@ public class Utils {
 
     public static final Double getDouble(Object object) {
         if(object instanceof Integer) {
-            return new Double((Integer)object);
+            return Double.valueOf((Integer) object);
         }
 
         if(object instanceof BigDecimal) {
@@ -314,7 +316,7 @@ public class Utils {
 
     public static final Long getLong(Object object) {
         if(object instanceof Integer) {
-            return new Long((Integer)object);
+            return  Long.valueOf((Integer)object);
         }
 
         if(object instanceof BigDecimal) {
@@ -753,9 +755,9 @@ public class Utils {
 
     public static final Long getLongValue(String value) {
         try {
-            return new Long(value);
+            return Long.valueOf(value);
         } catch (Throwable t) {
-            return new Long(0);
+            return Long.valueOf(0);
         }
     }
 
@@ -943,7 +945,7 @@ public class Utils {
             LocalDate date1 = LocalDate.parse(fromDate, dtf);
             LocalDate date2 = LocalDate.parse(toDate, dtf);
             daysBetween = ChronoUnit.DAYS.between(date1, date2);
-            return new Integer(Math.toIntExact(daysBetween));
+            return Math.toIntExact(daysBetween);
         } catch (Exception e) {
             e.printStackTrace();
         }

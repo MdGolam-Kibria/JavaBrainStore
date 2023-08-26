@@ -1,3 +1,7 @@
+/*
+
+comment this class just for dependency. we need to add just rabbit mq maven for work with this code
+
 package com.bbl.corporate.services.mqService;
 
 import com.rabbitmq.client.BuiltinExchangeType;
@@ -75,7 +79,9 @@ public class ConnectionManager {
         }), consumerTag -> {
             System.out.println(consumerTag);
         });
-        channel.basicConsume("EducationQ", false/*Didn't return any acknowledgement*/, ((consumerTag, message) -> {
+        channel.basicConsume("EducationQ", false*/
+/*Didn't return any acknowledgement*//*
+, ((consumerTag, message) -> {
             System.out.println("\n\n ============ Education Queue ==========");
             System.out.println(consumerTag);
             System.out.println("EducationQ: " + new String(message.getBody()));
@@ -123,3 +129,4 @@ public class ConnectionManager {
     }
 
 }
+*/

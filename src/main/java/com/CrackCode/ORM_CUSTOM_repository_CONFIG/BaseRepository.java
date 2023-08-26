@@ -1,3 +1,4 @@
+/*
 package com.CrackCode.ORM_CUSTOM_repository_CONFIG;
 
 import com.CrackCode.util.Utils;
@@ -16,13 +17,15 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
+*/
 /**
  * Created by Kibria
  *  based on test on only CORE SPRING FRAMEWORK not for this spring boot
- */
+ *//*
+
 @Transactional
 public abstract class BaseRepository<T extends Object> {
-	@Autowired
+	@Autowired(required = true)
 	@Qualifier(value = "sessionFactory")
 	private SessionFactory sessionFactory;
 
@@ -245,10 +248,13 @@ public abstract class BaseRepository<T extends Object> {
 		}
 	}
 
-	/**
+	*/
+/**
 	 * We can use below 2 methods after implement spring security
-	 */
-	/*public CustomUser getUserDetail() {
+	 *//*
+
+	*/
+/*public CustomUser getUserDetail() {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		if (auth.getPrincipal() instanceof String) {
 			return null;
@@ -267,7 +273,8 @@ public abstract class BaseRepository<T extends Object> {
 			return null;
 		}
 		return user;
-	}*/
+	}*//*
+
 
 	public int updateByNativeQuery(String sql, Map<String, Object> paramMap) {
 		if (Utils.isEmpty(sql)) {
@@ -302,3 +309,4 @@ public abstract class BaseRepository<T extends Object> {
 	}
 
 }
+*/
