@@ -10,7 +10,7 @@ Before discussing internal working of HashMap, we should understand **`hashCode(
 method contract in detail.
 <br/>
 
-### I have already explained about `equal()` and `hashCode()` <button>[click here.](equalAndHashCode.md)</button>
+### I have already explained about `equal()` and `hashCode()` <button>[click here.](../equalAndHashCode.md)</button>
 
 <img  src="../../../../../../../HashMapInternalStructure.png" title="hashMapInternal" alt="#"/>
 
@@ -213,4 +213,4 @@ provided `hashCode()`.
 for the provided key and the `HashMap<>()` goes to find the expected value from bucket list Nodes by the calculated `hashCode()`.
 if not found it will return `null` even the provided key is same but object state is different because changed object 
 return different `hashCode()`. Here object state means if in the object have our custom `hashCode()` method.
-For more details about `hashCode()` <button>[click here.](equalAndHashCode.md)</button>
+For more details about `hashCode()` <button>[click here.](../equalAndHashCode.md)</button>

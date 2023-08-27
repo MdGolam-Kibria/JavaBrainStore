@@ -227,7 +227,7 @@ static class Node<K, V> implements Map.Entry<K, V> {
 ```
 So, when we put item to a `HashMap<>()` it store value to a bucket by reference 
 the provided key hash value.
-For more details about `HashMap<>()` <button>[click here.](HashMapInternalStructure.md)</button>
+For more details about `HashMap<>()` <button>[click here.](hashMap/HashMapInternalStructure.md)</button>
 
 
 So, we put person object to hashmap it put the person data to bucket by the provided key `hashcode()`.
