@@ -810,7 +810,7 @@ expdp uname/pass@orcl schemas=DPDC directory=DATA_PUMP_DIR dumpfile=DPDC_2020_11
 <b><u>Answer :-   <button>[click here.](src/main/java/com/CrackCode/javaInternalDataStructure/equalAndHashCode.md)</button> </u></b> <br/>
 <br/>
 
-<b>23) About `HashMap<>()` Internal Architecture in depth with JDK code explanation <br/></b>
+<b>24) About `HashMap<>()` Internal Architecture in depth with JDK code explanation <br/></b>
 <b><u>Answer :-   <button>[click here.](src/main/java/com/CrackCode/javaInternalDataStructure/hashMap/HashMapInternalStructure.md)</button> </u></b> <br/>
 <br/>
 
