@@ -122,6 +122,12 @@ public class HashMap<K,V> extends AbstractMap<K,V>
 <h2>Let's discuss actual implementation of **HashMap<>()**</h2><br/>
 <img src="../../../../../../../MainHashMapInternalStructure.bmp" title="hashMapInternal" alt="#"/>
 
+
+
+If you face any difficulties to understand the above picture provided java 8 provided hash function
+please [click here](https://youtu.be/TllHVJGEY5A). Hope this will helpful for better understanding.
+
+
 ```java
 public class Test {
     public static void main(String[] args) {
