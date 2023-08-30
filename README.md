@@ -814,6 +814,11 @@ expdp uname/pass@orcl schemas=DPDC directory=DATA_PUMP_DIR dumpfile=DPDC_2020_11
 <b><u>Answer :-   <button>[click here.](src/main/java/com/CrackCode/javaInternalDataStructure/hashMap/HashMapInternalStructure.md)</button> </u></b> <br/>
 <br/>
 
+<b>25) About Fail Fast Vs Fail Safe Iterator In Java <br/></b>
+<b><u>Answer :-   <button>[click here.](https://javahungry.blogspot.com/2014/04/fail-fast-iterator-vs-fail-safe-iterator-difference-with-example-in-java.html)</button> </u></b> <br/>
+<br/>
+    
+
 
 
 
