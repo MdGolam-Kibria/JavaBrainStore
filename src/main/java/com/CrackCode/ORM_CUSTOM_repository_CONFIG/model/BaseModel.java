@@ -14,7 +14,7 @@ public class BaseModel implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(updatable = false)
+  /*  @Column(updatable = false)
     private Long createdBy;
     @Column(updatable = false)
     private String creator;//just for create a post now
@@ -38,5 +38,5 @@ public class BaseModel implements Serializable {
     @PreUpdate
     public void setPreUpdateData() {
         this.updatedAt = new Date();
-    }
+    }*/
 }

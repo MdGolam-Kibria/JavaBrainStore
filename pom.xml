@@ -92,6 +92,11 @@
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
+			<groupId>com.oracle.database.jdbc</groupId>
+			<artifactId>ojdbc8</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
@@ -100,6 +105,11 @@
             <artifactId>modelmapper</artifactId>
             <version>2.3.8</version>
         </dependency>
+		<dependency>
+			<groupId>com.CrackCode</groupId>
+			<artifactId>interviewQuestion</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 
 		<!--	end	For database related test-->
 

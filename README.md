@@ -901,7 +901,14 @@ expdp uname/pass@orcl schemas=DPDC directory=DATA_PUMP_DIR dumpfile=DPDC_2020_11
 
 
 <br/>
-    
+
+
+<b>28) Explain different type of isolation level in Java <br/></b>
+<b><u>Answer :- </u></b> <br/>
+
+<img src="DifferentTypeOfIsolationOfTransaction.PNG" alt="#">
+
+<br/>
 
 
 
