@@ -913,5 +913,29 @@ expdp uname/pass@orcl schemas=DPDC directory=DATA_PUMP_DIR dumpfile=DPDC_2020_11
 
 
 
+<b>29) Create <b>Oracle PL/SQL</b> trigger on table then update some column based on the triiger <br/></b>
+<b><u>Answer :- </u></b> <br/>
+
+ ```
+create trigger SET_DEFAULT_PASSWORD
+    before update
+    on USERS
+    for each row
+BEGIN
+    IF :NEW.PASSWORD IS NOT NULL AND :NEW.PASSWORD <> :OLD.PASSWORD THEN
+        :NEW.PASSWORD := '$2a$10$fYcxMH5SzN.DtrF.t3IpgeG4JcYuBPkUZA06dqvjVyI23MVa46h3i';
+        :NEW.NUMBER_OF_BAD_LOGIN:=0;
+        --Default Password: Abc@12345
+    END IF;
+END;
+/
+```
+
+<br/>
+
+
+
+
+
 
 
