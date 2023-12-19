@@ -941,7 +941,7 @@ END;
 <b><u>Answer :- </u></b> <br/>
 
 
-```
+```java
 
 import java.text.DecimalFormat;
 import java.util.Scanner;
