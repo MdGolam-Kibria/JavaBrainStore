@@ -1,4 +1,4 @@
-package com.CrackCode.IIT.DS.Stack;
+package com.CrackCode.IIT_DU.DS.Stack;
 
 public class Node {
     private int data;

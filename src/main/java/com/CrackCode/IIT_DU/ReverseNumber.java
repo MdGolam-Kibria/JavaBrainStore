@@ -1,4 +1,4 @@
-package com.CrackCode.IIT;
+package com.CrackCode.IIT_DU;
 
 import java.util.Scanner;
 
