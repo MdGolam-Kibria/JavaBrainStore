@@ -913,5 +913,113 @@ expdp uname/pass@orcl schemas=DPDC directory=DATA_PUMP_DIR dumpfile=DPDC_2020_11
 
 
 
+<b>29) Create <b>Oracle PL/SQL</b> trigger on table then update some column based on the triiger <br/></b>
+<b><u>Answer :- </u></b> <br/>
+
+ ```
+create trigger SET_DEFAULT_PASSWORD
+    before update
+    on USERS
+    for each row
+BEGIN
+    IF :NEW.PASSWORD IS NOT NULL AND :NEW.PASSWORD <> :OLD.PASSWORD THEN
+        :NEW.PASSWORD := '$2a$10$fYcxMH5SzN.DtrF.t3IpgeG4JcYuBPkUZA06dqvjVyI23MVa46h3i';
+        :NEW.NUMBER_OF_BAD_LOGIN:=0;
+        --Default Password: Abc@12345
+    END IF;
+END;
+/
+```
+
+<br/>
+
+
+
+
+
+<b>29) How to convert number to bangla taka as like <b>2323.34 = Two Thousand Three Hundred Twenty Three Taka Thirty Four Paisa Only</b> <br/></b>
+<b><u>Answer :- </u></b> <br/>
+
+
+```java
+
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class NumberToBanglaTaka {
+    public static final String[] units = new String[]{"", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
+    public static final String[] tens = new String[]{"", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"};
+
+    public NumberToBanglaTaka() {
+    }
+
+    public static String convert(double n) {
+        DecimalFormat decimalFormat = new DecimalFormat("#0.00");
+        String numberAsString = decimalFormat.format(n);
+        String[] convert = numberAsString.split("\\.");
+        long taka = Long.parseLong(convert[0]);
+        int paisa = Integer.parseInt(convert[1]);
+        NumberToBanglaTaka numberToBanglaTaka = new NumberToBanglaTaka();
+        String totalTaka = "";
+        if (taka != 0L) {
+            totalTaka = numberToBanglaTaka.convertTaka(taka) + " Taka ";
+        }
+
+        if (taka == 0L && n < 0.0) {
+            totalTaka = "Minus ";
+        }
+
+        if (paisa > 0) {
+            totalTaka = totalTaka + numberToBanglaTaka.convertPaisa(paisa) + " Paisa ";
+        }
+
+        totalTaka = totalTaka + "Only";
+        return totalTaka;
+    }
+
+    public String convertTaka(Long n) {
+        if (n < 0L) {
+            return "Minus " + this.convertTaka(Math.abs(n));
+        } else {
+            int a;
+            if (n < 20L) {
+                a = Integer.parseInt(n.toString());
+                return units[a];
+            } else if (n < 100L) {
+                a = Integer.parseInt(n.toString());
+                return tens[a / 10] + (n % 10L != 0L ? " " : "") + units[a % 10];
+            } else if (n < 1000L) {
+                a = Integer.parseInt(n.toString());
+                return units[a / 100] + " Hundred" + (a % 100 != 0 ? " " : "") + this.convertTaka(n % 100L);
+            } else if (n < 100000L) {
+                return this.convertTaka(n / 1000L) + " Thousand" + (n % 10000L != 0L ? " " : "") + this.convertTaka(n % 1000L);
+            } else {
+                return n < 10000000L ? this.convertTaka(n / 100000L) + " Lakh" + (n % 100000L != 0L ? " " : "") + this.convertTaka(n % 100000L) : this.convertTaka(n / 10000000L) + " Crore" + (n % 10000000L != 0L ? " " : "") + this.convertTaka(n % 10000000L);
+            }
+        }
+    }
+
+    public String convertPaisa(int n) {
+        if (n < 20) {
+            return units[n];
+        } else {
+            return n < 100 ? tens[n / 10] + (n % 10 != 0 ? " " : "") + units[n % 10] : "";
+        }
+    }
+
+    public static void main(String[] args) {
+        while(true) {
+            Scanner scr = new Scanner(System.in);
+            double l = scr.nextDouble();
+            System.out.println(convert(l));
+        }
+    }
+}
+```
+
+
+
+
+
 
 
