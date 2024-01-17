@@ -2,7 +2,7 @@ package com.CrackCode.IIT_DU.DS.Stack;
 
 public class StackUsingLinkList {
     /**
-     * Remember one thins that the Stack concept always work in [LIFO(last in first out)] model
+     * Remember one thing that the Stack concept always work in [LIFO(last in first out)] model
      */
     private Node head;
 
