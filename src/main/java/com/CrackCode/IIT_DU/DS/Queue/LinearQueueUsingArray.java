@@ -58,13 +58,13 @@ public class LinearQueueUsingArray {
         queueObj.enqueue(3);
         queueObj.enqueue(4);
 
-        queueObj.enqueue(5);
+      /*  queueObj.enqueue(5);
         queueObj.enqueue(6);
         queueObj.enqueue(7);
         queueObj.enqueue(8);
         queueObj.enqueue(9);
         queueObj.enqueue(10);
-        queueObj.enqueue(11);
+        queueObj.enqueue(11);*/
 
         for (int i = queueObj.font; i <= queueObj.rear - 1; i++) {
             System.out.println(queueObj.dequeue());
