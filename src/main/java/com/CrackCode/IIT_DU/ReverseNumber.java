@@ -3,15 +3,6 @@ package com.CrackCode.IIT_DU;
 import java.util.Scanner;
 
 public class ReverseNumber {
-    public static void main(String[] args) {
-        Scanner myObj = new Scanner(System.in);
-        System.out.println("Enter a number : ");
-
-        int expectedNumber = myObj.nextInt();
-        System.out.println("Using Builder: "+reverseNumber(expectedNumber));
-        reverseNumber2(expectedNumber);
-    }
-
     private static int reverseNumber(int expectedNumber) {
         StringBuilder builder = new StringBuilder(String.valueOf(expectedNumber));
         return Integer.parseInt(builder.reverse().toString());
@@ -21,7 +12,23 @@ public class ReverseNumber {
         System.out.print("Using Array: ");
         char[] charArray = String.valueOf(expectedNumber).toCharArray();
         for (int i = charArray.length - 1; i >= 0; i--) {
-            System.out.print(""+charArray[i]);
+            System.out.print("" + charArray[i]);
         }
+    }
+
+
+    public static void main(String[] args) {
+        System.out.println("Enter your number: ");
+        Scanner scanner = new Scanner(System.in);
+        if (!scanner.hasNextInt()) {
+            System.out.println("Input should be an integer");
+            main(new String[]{});
+        } else {
+            int currentVal = scanner.nextInt();
+            reverseNumber(currentVal);
+            reverseNumber2(currentVal);
+            System.out.println();
+        }
+
     }
 }
