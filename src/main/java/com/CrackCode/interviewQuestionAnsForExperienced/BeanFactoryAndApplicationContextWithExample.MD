@@ -1,4 +1,4 @@
-# About ```Bean Factory``` and ```Application Context```
+# Understanding in Depth: Bean Factory and Application Context
 <br/><br/>
 
 Both ```BeanFactory``` and ```ApplicationContext``` are part of the Spring Framework and are used for 
