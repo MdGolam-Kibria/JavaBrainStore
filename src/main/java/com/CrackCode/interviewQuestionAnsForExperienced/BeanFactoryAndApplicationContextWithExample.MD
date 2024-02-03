@@ -24,7 +24,7 @@ ApplicationContext is more feature-rich and is recommended for most applications
 
 <br/>
 
-# Some important question with answer
+# Some important questions with answers
 
 ### **Question 1:**
 
