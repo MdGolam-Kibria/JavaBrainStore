@@ -1062,7 +1062,11 @@ SELECT *
 FROM EmployeeHierarchy;
 
 ```
+OUTPUT:
 
+ParentId : 4
+
+![Screenshot from 2024-02-13 17-05-37](https://github.com/MdGolam-Kibria/JavaBrainStore/assets/61331272/fd0f8906-d5a9-4f4b-8c14-cdf4b0853056)
 
 
 
