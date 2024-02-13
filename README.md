@@ -1017,6 +1017,55 @@ public class NumberToBanglaTaka {
 }
 ```
 
+<b>30) Example for get flatten hierarchy from a self join table.<br/></b>
+<b><u>Answer :- </u></b> <br/>
+
+```
+
+CREATE TABLE employee (
+  employee_id SERIAL PRIMARY KEY,
+  parent_id INT REFERENCES employee(employee_id) ON DELETE CASCADE,
+  name VARCHAR(255) NOT NULL,
+  department VARCHAR(100) NOT NULL,
+  UNIQUE (name)
+);
+
+
+
+insert into public.employee (employee_id, parent_id, name, department) values (1, null, 'kibria', 'java');
+insert into public.employee (employee_id, parent_id, name, department) values (2, 1, 'avigit', 'php');
+insert into public.employee (employee_id, parent_id, name, department) values (3, 2, 'adnan', 'c#');
+insert into public.employee (employee_id, parent_id, name, department) values (4, 3, 'rakib', 'python');
+insert into public.employee (employee_id, parent_id, name, department) values (5, 4, 'ahad', 'HR');
+insert into public.employee (employee_id, parent_id, name, department) values (6, 5, 'Plabon', 'HR');
+insert into public.employee (employee_id, parent_id, name, department) values (7, 6, 'saju', 'angular');
+insert into public.employee (employee_id, parent_id, name, department) values (8, 4, 'William', 'c#');
+
+
+
+
+select * from employee order by employee_id;
+
+--Using this query we can get (Example for get flatten hierarchy from a self join table) by parent ID
+WITH RECURSIVE EmployeeHierarchy AS (
+  SELECT employee_id, parent_id, name, department
+  FROM employee
+  WHERE employee_id =:parentId --parent id
+
+  UNION ALL
+
+  SELECT e.employee_id, e.parent_id, e.name, e.department
+  FROM employee e
+  INNER JOIN EmployeeHierarchy eh ON e.parent_id = eh.employee_id
+)
+SELECT *
+FROM EmployeeHierarchy;
+
+```
+
+
+
+
 
 
 
