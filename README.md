@@ -1050,7 +1050,7 @@ select * from employee order by employee_id;
 WITH RECURSIVE EmployeeHierarchy AS (
   SELECT employee_id, parent_id, name, department
   FROM employee
-  WHERE employee_id =:parentId --parent id
+  WHERE :parentId is null and parent_id is null or parent_id = :parentId
 
   UNION ALL
 
@@ -1060,7 +1060,6 @@ WITH RECURSIVE EmployeeHierarchy AS (
 )
 SELECT *
 FROM EmployeeHierarchy;
-
 ```
 OUTPUT:
 
