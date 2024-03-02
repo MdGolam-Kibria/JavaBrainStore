@@ -58,8 +58,21 @@
 		<dependency>
 			<groupId>net.sf.jasperreports</groupId>
 			<artifactId>jasperreports</artifactId>
-			<version>${jasper.version}</version>
+			<version>6.12.1</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.lowagie</groupId>
+					<artifactId>itext</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
+		<!--        "jasperreports" can't resolve "itext" dependency on jenkins.so it added independently-->
+		<dependency>
+			<groupId>com.lowagie</groupId>
+			<artifactId>itext</artifactId>
+			<version>2.1.7</version>
+		</dependency>
+
 <!--Below 2 maven for generate BarCode/QrCode dynamically-->
 		<!--Core image dependency-->
 		<dependency>
