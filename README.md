@@ -1070,6 +1070,15 @@ ParentId : 4
 
 
 
+<b>31) Create binary tree using custom LinkedList and print preorder,inorder and postorder <br/></b>
+<b><u>Answer :- </u></b> <br/>
+
+https://github.com/MdGolam-Kibria/JavaBrainStore/blob/master/src/main/java/com/CrackCode/javaInternalDataStructure/BinaryTree/BinaryTreeCreationWithPrePostInorderExample.java
+
+
+
+
+
 
 
 
