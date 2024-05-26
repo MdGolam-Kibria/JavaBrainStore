@@ -16,7 +16,7 @@ class Node<T> {
 }
 
 
-public class BinaryTreeCreationExample {
+public class BinaryTreeCreationWithPrePostInorderExample {
     static final int terminationValue = -1;
 
     static Node<Integer> create() {
@@ -26,7 +26,7 @@ public class BinaryTreeCreationExample {
         Integer currentData = null;
         try {
             currentData = scanner.nextInt();
-        }catch (InputMismatchException e){
+        } catch (InputMismatchException e) {
             System.out.println("Wrong Input!! Please Enter Integer Value");
             System.exit(0);
         }
@@ -42,9 +42,42 @@ public class BinaryTreeCreationExample {
         return root;
     }
 
-    public static void main(String[] args) {
-        Node<Integer> createBinaryTree = create();
 
-        System.out.println("okay");
+    static void preOrder(Node<Integer> root) {
+        if (root == null) {
+            return;
+        }
+        System.out.print(root.data);
+        preOrder(root.left);
+        preOrder(root.right);
+    }
+
+    static void inOrder(Node<Integer> root) {
+        if (root == null) {
+            return;
+        }
+        inOrder(root.left);
+        System.out.print(root.data);
+        inOrder(root.right);
+    }
+
+    static void postOrder(Node<Integer> root) {
+        if (root == null) {
+            return;
+        }
+        postOrder(root.left);
+        postOrder(root.right);
+        System.out.print(root.data);
+    }
+
+    public static void main(String[] args) {
+        Node<Integer> root = create();
+        System.out.println("Successfully created binary tree");
+        System.out.println("Going to parse data inorder   = left root right. preorder  = root left right. postorder = left right root.");
+        preOrder(root);
+        System.out.println();
+        inOrder(root);
+        System.out.println();
+        postOrder(root);
     }
 }
