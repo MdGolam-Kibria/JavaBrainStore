@@ -1,7 +1,7 @@
 ENTER nUMBER OF VERTICES
 5
 enter the edges
-6
+5
 Enter the edges of source and destination
 Enter source :
 0
@@ -16,18 +16,18 @@ Enter source :
 Enter destination :
 3
 Enter source :
+1
+Enter destination :
 3
-Enter destination :
-4
-Enter source :
-2
-Enter destination :
-4
 Enter source :
 1
 Enter destination :
 4
 Enter source for bfs traversal :
 2
-20341
-Process finished with exit code 0
+BFS Result :
+20314
+Enter source for DFS traversal :
+2
+DFS Result :
+23140
