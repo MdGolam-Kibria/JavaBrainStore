@@ -1131,7 +1131,7 @@ https://github.com/MdGolam-Kibria/JavaBrainStore/tree/master/src/main/java/com/C
 2) ignore SSL handshake and using proxy serve
 
      ```
-             @Bean("sslHandshakeIgnoreRestTemplate")
+        @Bean("sslHandshakeIgnoreRestTemplate")
         public RestTemplate sslHandshakeIgnoreRestTemplate() {
             // Create a TrustManager that accepts all certificates
             TrustManager[] trustAllCertificates = new TrustManager[] {
