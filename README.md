@@ -1159,7 +1159,7 @@ https://github.com/MdGolam-Kibria/JavaBrainStore/tree/master/src/main/java/com/C
         
             // Create a RestTemplate with a  proxy server as gateway
             SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
-            Proxy proxy =new Proxy(Proxy.Type.HTTP,new InetSocketAddress("10.5.80.254",8080));
+            Proxy proxy =new Proxy(Proxy.Type.HTTP,new InetSocketAddress("172.25.4.170",8080));
             // This factory allows disabling SSL certificate validation
             requestFactory.setProxy(proxy);
             
