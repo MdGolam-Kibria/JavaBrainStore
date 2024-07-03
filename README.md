@@ -1128,7 +1128,7 @@ https://github.com/MdGolam-Kibria/JavaBrainStore/tree/master/src/main/java/com/C
 
 
 
-2) ignore SSL handshake and using proxy serve
+2) ignore SSL handshake and using proxy server.
 
      ```
         @Bean("sslHandshakeIgnoreRestTemplate")
