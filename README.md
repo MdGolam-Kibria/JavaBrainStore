@@ -1083,6 +1083,91 @@ https://github.com/MdGolam-Kibria/JavaBrainStore/blob/master/src/main/java/com/C
 https://github.com/MdGolam-Kibria/JavaBrainStore/tree/master/src/main/java/com/CrackCode/javaInternalDataStructure/graph
 
 
+<b>33) RestTemplate for ignore SSL handshake and using proxy server <br/></b>
+<b><u>Answer :- </u></b> <br/>
+
+  1) ignore SSL handshake and using proxy server.
+
+
+     ```     
+          @Bean("sslHandshakeIgnoreRestTemplate")
+          public RestTemplate sslHandshakeIgnoreRestTemplate() {
+              // Create a TrustManager that accepts all certificates
+              TrustManager[] trustAllCertificates = new TrustManager[] {
+                      new X509TrustManager() {
+                          public X509Certificate[] getAcceptedIssuers() {
+                              return null;
+                          }
+                          public void checkClientTrusted(X509Certificate[] certs, String authType) {}
+                          public void checkServerTrusted(X509Certificate[] certs, String authType) {}
+                      }
+              };
+      
+              try {
+                  // Set up a SSL context that ignores all certificate validation
+                  SSLContext sslContext = SSLContext.getInstance("SSL");
+                  sslContext.init(null, trustAllCertificates, new java.security.SecureRandom());
+                  HttpsURLConnection.setDefaultSSLSocketFactory(sslContext.getSocketFactory());
+      
+                  // Set up a hostname verifier that accepts all hostnames
+                  HostnameVerifier allHostsValid = (hostname, session) -> true;
+                  HttpsURLConnection.setDefaultHostnameVerifier(allHostsValid);
+              } catch (Exception e) {
+                  e.printStackTrace();
+              }
+      
+              // Create a RestTemplate with a SimpleClientHttpRequestFactory
+              // This factory allows disabling SSL certificate validation
+              RestTemplate restTemplate = new RestTemplate(clientHttpRequestFactory());
+      
+              return restTemplate;
+          }
+     ```
+
+
+
+
+
+2) ignore SSL handshake and using proxy serve
+
+     ```
+             @Bean("sslHandshakeIgnoreRestTemplate")
+        public RestTemplate sslHandshakeIgnoreRestTemplate() {
+            // Create a TrustManager that accepts all certificates
+            TrustManager[] trustAllCertificates = new TrustManager[] {
+                    new X509TrustManager() {
+                        public X509Certificate[] getAcceptedIssuers() {
+                            return null;
+                        }
+                        public void checkClientTrusted(X509Certificate[] certs, String authType) {}
+                        public void checkServerTrusted(X509Certificate[] certs, String authType) {}
+                    }
+            };
+        
+            try {
+                // Set up a SSL context that ignores all certificate validation
+                SSLContext sslContext = SSLContext.getInstance("SSL");
+                sslContext.init(null, trustAllCertificates, new java.security.SecureRandom());
+                HttpsURLConnection.setDefaultSSLSocketFactory(sslContext.getSocketFactory());
+        
+                // Set up a hostname verifier that accepts all hostnames
+                HostnameVerifier allHostsValid = (hostname, session) -> true;
+                HttpsURLConnection.setDefaultHostnameVerifier(allHostsValid);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        
+            // Create a RestTemplate with a  proxy server as gateway
+            SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
+            Proxy proxy =new Proxy(Proxy.Type.HTTP,new InetSocketAddress("10.5.80.254",8080));
+            // This factory allows disabling SSL certificate validation
+            requestFactory.setProxy(proxy);
+            
+            RestTemplate restTemplate = new RestTemplate(requestFactory);
+        
+            return restTemplate;
+        }
+     ```
 
 
 
