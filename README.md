@@ -1020,7 +1020,7 @@ public class NumberToBanglaTaka {
 <b>30) Example for get flatten hierarchy from a self join table.<br/></b>
 <b><u>Answer :- </u></b> <br/>
 
-```
+```sql
 
 CREATE TABLE employee (
   employee_id SERIAL PRIMARY KEY,
@@ -1089,7 +1089,8 @@ https://github.com/MdGolam-Kibria/JavaBrainStore/tree/master/src/main/java/com/C
   1) ignore SSL handshake and using proxy server.
 
 
-     ```     
+     
+  ```java   
           @Bean("sslHandshakeIgnoreRestTemplate")
           public RestTemplate sslHandshakeIgnoreRestTemplate() {
               // Create a TrustManager that accepts all certificates
@@ -1130,7 +1131,8 @@ https://github.com/MdGolam-Kibria/JavaBrainStore/tree/master/src/main/java/com/C
 
 2) ignore SSL handshake and using proxy server.
 
-     ```
+     
+    ```java
         @Bean("sslHandshakeIgnoreRestTemplate")
         public RestTemplate sslHandshakeIgnoreRestTemplate() {
             // Create a TrustManager that accepts all certificates
@@ -1176,7 +1178,7 @@ https://github.com/MdGolam-Kibria/JavaBrainStore/tree/master/src/main/java/com/C
 <b>34) Handle api call exceptions using RestTemplate <br/></b>
 <b><u>Answer :- </u></b> <br/>
 
-     ```
+   ```java
         private BaseResponseBody<?> handleExceptions(Exception e) {
         try {
             if (e instanceof HttpServerErrorException) {
