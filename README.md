@@ -1089,8 +1089,7 @@ https://github.com/MdGolam-Kibria/JavaBrainStore/tree/master/src/main/java/com/C
   1) ignore SSL handshake and using proxy server.
 
 
-     
-  ```java   
+     ```java   
           @Bean("sslHandshakeIgnoreRestTemplate")
           public RestTemplate sslHandshakeIgnoreRestTemplate() {
               // Create a TrustManager that accepts all certificates
@@ -1124,9 +1123,6 @@ https://github.com/MdGolam-Kibria/JavaBrainStore/tree/master/src/main/java/com/C
               return restTemplate;
           }
      ```
-
-
-
 
 
 2) ignore SSL handshake and using proxy server.
@@ -1168,10 +1164,7 @@ https://github.com/MdGolam-Kibria/JavaBrainStore/tree/master/src/main/java/com/C
             RestTemplate restTemplate = new RestTemplate(requestFactory);
         
             return restTemplate;
-        }
-     ```
-
-
+        } ```
 
 
 
@@ -1237,9 +1230,7 @@ https://github.com/MdGolam-Kibria/JavaBrainStore/tree/master/src/main/java/com/C
                     "[NSU] Something went wrong during call NSU API. Please contact with your administrator.", exception);
         }
     }
-     ```
-
-
+ ```
 
 
 
