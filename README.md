@@ -1173,6 +1173,74 @@ https://github.com/MdGolam-Kibria/JavaBrainStore/tree/master/src/main/java/com/C
 
 
 
+<b>34) Handle api call exceptions using RestTemplate <br/></b>
+<b><u>Answer :- </u></b> <br/>
+
+     ```
+        private BaseResponseBody<?> handleExceptions(Exception e) {
+        try {
+            if (e instanceof HttpServerErrorException) {
+                if (((HttpServerErrorException) e).getStatusCode() == HttpStatus.INTERNAL_SERVER_ERROR) {
+                    String responseBody500 = ((HttpServerErrorException) e).getResponseBodyAsString();
+                    logger.error("[NSU] Nsu server return INTERNAL SERVER ERROR and the response body is : {}", responseBody500);
+                    return ResponseBuilder.getFailureResponse(HttpStatus.SERVICE_UNAVAILABLE,
+                            "NSU System did not respond as per our expectation. " +
+                                    "You can try again or you can proceed to collect using 'North South University (Offline)' merchant.", e);
+                }
+            }
+            //if (e instanceof ResourceAccessException) {
+            Throwable cause = e.getCause();
+            if (cause instanceof ConnectException) {
+                //@INFO This usually means the server is unreachable. This could be due to the server being down, incorrect IP/hostname, or network issues.
+                return ResponseBuilder.getFailureResponse(HttpStatus.SERVICE_UNAVAILABLE,
+                        "Unable to connect to the NSU System. Please check if the system is up and reachable " +
+                                "or you can proceed to collect using 'North South University (Offline)' merchant.", e);
+            } else if (cause instanceof SocketTimeoutException) {
+                //@INFO This happens when the connection or read operation times out. You might need to increase your timeout settings or check the server's response times.
+                return ResponseBuilder.getFailureResponse(HttpStatus.SERVICE_UNAVAILABLE,
+                        "NSU System did not respond within the anticipated time. " +
+                                "Please contact with your administrator.", e);
+            } else if (cause instanceof UnknownHostException) {
+                //@INFO This indicates a DNS issue where the hostname cannot be resolved to an IP address.
+                return ResponseBuilder.getFailureResponse(HttpStatus.SERVICE_UNAVAILABLE,
+                        "NSU System host could not be determined. " +
+                                "You can proceed to collect using 'North South University (Offline)' merchant.", e);
+            } else if (cause instanceof NoRouteToHostException) {
+                //@INFO This means that the networking system is unable to find a route to the specified host, often due to network configuration issues.
+                return ResponseBuilder.getFailureResponse(HttpStatus.SERVICE_UNAVAILABLE,
+                        "No route to the NSU System host." +
+                                " You can proceed to collect using 'North South University (Offline)' merchant.", e);
+            } else if (cause instanceof PortUnreachableException) {
+                //specific exception in Java's networking API that occurs when an attempt to connect to a specific port on a remote host fails because the port is unreachable
+                return ResponseBuilder.getFailureResponse(HttpStatus.SERVICE_UNAVAILABLE,
+                        "Defined port Unreachable." +
+                                " You can proceed to collect using 'North South University (Offline)' merchant.", e);
+            } else if (cause instanceof ConnectionResetException) {
+                //that indicates a connection was forcibly closed by a peer. This exception often occurs when the server unexpectedly terminates the connection.
+                return ResponseBuilder.getFailureResponse(HttpStatus.SERVICE_UNAVAILABLE,
+                        "Server unexpectedly terminates the connection." +
+                                " Please contact with your administrator.", e);
+            } else if (cause instanceof IOException) {
+                //@INFO This is a broad exception for I/O issues, which could be due to stream interruptions, unexpected closures, or other input/output errors
+                return ResponseBuilder.getFailureResponse(HttpStatus.SERVICE_UNAVAILABLE,
+                        "An I/O error occurred while trying to reach the NSU System. " +
+                                "Please contact with your administrator.", e);
+            }
+            // }
+            return ResponseBuilder.getFailureResponse(HttpStatus.INTERNAL_SERVER_ERROR,
+                    "[NSU] Something went wrong during call NSU API. Please contact with your administrator.", e);
+        } catch (Exception exception) {
+            logger.error("[NSU] Something went wrong during handle NSU api call exception :{}", exception.getMessage(), exception);
+            return ResponseBuilder.getFailureResponse(HttpStatus.INTERNAL_SERVER_ERROR,
+                    "[NSU] Something went wrong during call NSU API. Please contact with your administrator.", exception);
+        }
+    }
+     ```
+
+
+
+
+
 
 
 
