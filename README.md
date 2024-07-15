@@ -43,7 +43,7 @@
      ![image](https://user-images.githubusercontent.com/61331272/141931760-6301ad9f-3672-44e6-9003-f094fc9ad145.png)
      </b>
      
-     ```
+   ```java
      /**
      * Common method for getData from database using entity Manager
      */
@@ -158,7 +158,7 @@
 <b><u>Answer :- </u></b> 
 <br/><h6><u>Procedure:-</u> </h6>
    
- ```
+ ```sql
  create procedure saveEmployeeex(
     stmt IN CLOB,
     output OUT number
@@ -218,7 +218,7 @@ END
   
   i)Create Package :-<br/>
 ![image](https://user-images.githubusercontent.com/61331272/140702489-bf05d732-fe2d-4c4b-a331-a77960cc60c2.png) <br/>
-```
+```sql
 create PACKAGE getAllEmployeeByPackage AS
     PROCEDURE getAll(
         e_disp OUT SYS_REFCURSOR
@@ -228,7 +228,7 @@ END getAllEmployeeByPackage;
 ```
   ii) create package body :-<br/>
 ![image](https://user-images.githubusercontent.com/61331272/140702622-bda1cdd4-014b-4ea6-8031-3b12897950c4.png) <br/>
-```
+```sql
 create package body getAllEmployeeByPackage as
     procedure getAll(
         e_disp OUT SYS_REFCURSOR
@@ -250,7 +250,7 @@ end getAllEmployeeByPackage;
 <br/><h6><u>Procedure:-</u> </h6>
    ![image](https://user-images.githubusercontent.com/61331272/140736643-7187ef37-c9ed-460e-b64e-1584063f50fd.png)
 <br/>
-```
+```sql
 procedure getEmployeeById(
         id_in IN EMPLOYEE.ID%type,
         e_disp OUT SYS_REFCURSOR
@@ -275,7 +275,7 @@ procedure getEmployeeById(
 <b><u>Answer :- </u></b> 
 <br/><h6><u>FUNCTION:-</u> </h6>
    ![image](https://user-images.githubusercontent.com/61331272/141075382-1e0ca616-fff1-42d8-8cdc-3f0c3310474d.png)<br/>
-   ```
+   ```sql
    create or replace function adder(n1 in number, n2 in number)
     return number
     is
@@ -290,7 +290,7 @@ end;
  
  ![image](https://user-images.githubusercontent.com/61331272/141075551-f52a26b5-64a1-43b2-ac8d-b14134c6f3bf.png) <br/>
  
- ```
+ ```sql
  select adder(12,8) as sum from DUAL;
  ```
  <br/>
@@ -302,7 +302,7 @@ end;
 
  ![image](https://user-images.githubusercontent.com/61331272/141611012-0817e928-308b-4914-8647-009d09eaccb3.png)
  <br/>
- ```
+ ```sql
  create procedure getEmployeeAllInsideFunctionCall(
     empl_idd IN EMPLOYEE.ID%type,
     e_disp OUT SYS_REFCURSOR
@@ -321,7 +321,7 @@ end;
  <br/>  
  
  
- ```
+ ```sql
  create function getEmployee(
     emp_id EMPLOYEE.ID%type
 ) return SYS_REFCURSOR
@@ -356,7 +356,7 @@ end;
    
  <br/>
  
- ```
+ ```sql
   CREATE SEQUENCE IncrementId
     INCREMENT BY 10
     START WITH 10
@@ -420,7 +420,7 @@ END getPersonByCallingView;
 <b><u>Answer :- </u></b> <br/><h6><u>All Query:-</u> </h6><br/>
    ![image](https://user-images.githubusercontent.com/61331272/141830877-8d47cd68-1963-4f0c-99b3-961d613f5f0b.png)
  
- ```
+ ```sql
   select CASE
            when e.ID = 7 then
                'This is 7'
@@ -439,7 +439,7 @@ from EMPLOYEE e;
 <b><u>Answer :- </u></b> <br/><h6><u>All Query:-</u> </h6><br/>
 <u>JSON demo</u></b>
 
-```
+```sql
 {
   "collectionType": 0,
   "billInfo": {
@@ -485,7 +485,7 @@ from EMPLOYEE e;
 
 </b>
    
- ```
+ ```sql
 SELECT
   AT.METADATA
 FROM
@@ -505,7 +505,7 @@ WHERE
    <b>11)How to run a sql script for Multiple operation without creating procedure in oracle  <br/></b>
 <b><u>Answer :- </u></b> <br/>
 
-```
+```sql
 DECLARE
     cursor allCallCenterAndAllOPS
     IS
@@ -567,7 +567,7 @@ ALTER TABLE STUDENT ADD NAME VARCHAR2(255);--FOR ADD [NAME] COLUMN FROM STUDENT 
 
 <b>NOTE:we didn't write logic here. :(</b>
 
-```
+```sql
 DECLARE
   L_CNT PLS_INTEGER;
 BEGIN
@@ -609,7 +609,7 @@ END;
 
 <b>CREATE SEQUENCE</b>
 
-```
+```sql
 create sequence SERVICE_REQUEST_TYPE_SEQ
     order
     nocache
@@ -619,7 +619,7 @@ create sequence SERVICE_REQUEST_TYPE_SEQ
 
 <b>CREATE SEQUENCE  generator</b>
 
-```
+```sql
 create trigger SERVICE_REQUEST_TYPE_SEQ_GEN
     before insert
     on SERVICE_REQUEST_TYPE
@@ -641,14 +641,14 @@ END;
   <b>15)How to get only date form current date and increment/decrement day using <b>ORACLE</b> query <br/></b>
 <b><u>Answer :- </u></b> <br/>
 
-```
+```sql
 SELECT TRUNC(SYSDATE-5) FROM DUAL;
 ```
 
  <b>16)get 3rd high salary using <b>ORACLE</b> query <br/></b>
 <b><u>Answer :- </u></b> <br/>
 
-```
+```sql
 SELECT n.TOTAL_BBL_AMT FROM (SELECT TOTAL_BBL_AMT
 FROM CORP_FILE_UPLOAD_INFO
 order by TOTAL_BBL_AMT DESC) n offset 3 rows fetch next 1 rows only;
@@ -658,7 +658,7 @@ order by TOTAL_BBL_AMT DESC) n offset 3 rows fetch next 1 rows only;
  <b>17)get one to many table data using <b>MS SQL</b> query <br/></b>
 <b><u>Answer :- </u></b> <br/>
 
-```
+```sql
 SELECT
     STRING_AGG(PN.phone,
     ',') as phoneNumber,--wil get result as comma separeted value like (01776767656,01531425247) 
@@ -685,7 +685,7 @@ group by
 
 ##If we want to short the comma separated value the SQL will be <br/>
 
-```
+```sql
 SELECT 
   STRING_AGG(PN.phone, ',') WITHIN GROUP (
     ORDER BY 
@@ -715,7 +715,7 @@ group by
 <b>18)if given value is null then return all otherwise return based on the given input using <b>ORACLE SQL</b> query <br/></b>
 <b><u>Answer :- </u></b> <br/>
 
-```
+```sql
 SELECT * FROM USERS WHERE USERNAME= (
     CASE WHEN :varname is null
     THEN
@@ -765,7 +765,7 @@ expdp uname/pass@orcl schemas=DPDC directory=DATA_PUMP_DIR dumpfile=DPDC_2020_11
 <b>21) parse comma separeted String to string arrary and make a lopp on that array using PLSQL <br/></b>
 <b><u>Answer :- </u></b> <br/>
 
-```
+```sql
     DECLARE
       input_string VARCHAR2(100) := 'kibria,anika,manik';
       string_array DBMS_SQL.VARCHAR2_TABLE;
@@ -788,7 +788,7 @@ expdp uname/pass@orcl schemas=DPDC directory=DATA_PUMP_DIR dumpfile=DPDC_2020_11
 <b>22) get second high salary using java stream api <br/></b>
 <b><u>Answer :- </u></b> <br/>
 
-```
+```java
     public static void main(String[] args) {
         int[] salaries = {100, 200, 500, 50, 30};
         int secondHighestSalary = Arrays.stream(salaries)
@@ -916,7 +916,7 @@ expdp uname/pass@orcl schemas=DPDC directory=DATA_PUMP_DIR dumpfile=DPDC_2020_11
 <b>29) Create <b>Oracle PL/SQL</b> trigger on table then update some column based on the triiger <br/></b>
 <b><u>Answer :- </u></b> <br/>
 
- ```
+ ```sql
 create trigger SET_DEFAULT_PASSWORD
     before update
     on USERS
