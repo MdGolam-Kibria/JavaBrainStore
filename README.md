@@ -1241,6 +1241,52 @@ https://gist.github.com/MdGolam-Kibria/594cd446444e9a23ef7e75927c0e9a2e
 
 
 
+<b>36) Log a transaction lifecycle <br/></b>
+<b><u>Answer :- </u></b> <br/>
+
+```yml
+
+#For log full transaction life cycle
+logging:
+  level:
+    org:
+      springframework:
+        orm:
+          jpa: DEBUG
+```
+
+Result : 
+
+```
+
+11/09/2024 02:48:35.295PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] INFO  c.b.c.a.s.H2H.impl.H2HServiceImpl - xlsx File found to be parsed
+11/09/2024 02:48:35.297PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(2015450469<open>)] for JPA transaction
+11/09/2024 02:48:35.297PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [com.bbl.corpnet.api.service.H2H.H2HLegacyTransactionUploader.uploadBankExcel]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+11/09/2024 02:48:35.299PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@13917d1f]
+11/09/2024 02:48:35.301PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] INFO  c.b.c.a.s.H.H2HLegacyTransactionUploader - Upload Bank Excel is called
+11/09/2024 02:48:35.304PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] INFO  c.b.c.a.s.H.H2HLegacyTransactionUploader - Reading XL file:/home/golamkibria/bracBank/corpnet-api/h2hFiles/CORPNET/11-09-2024/Third_Party_Transfer(1).xlsx
+
+11/09/2024 02:48:35.779PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] INFO  c.b.c.a.s.H.H2HLegacyTransactionUploader - Ready to call maker API for user:C3S_MAKER, companyId:4280
+11/09/2024 02:48:35.779PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(2015450469<open>)] for JPA transaction
+11/09/2024 02:48:35.779PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
+11/09/2024 02:48:35.798PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] INFO  c.b.c.a.m.s.i.UniversalTransactionMakerService - Maker API Request Payload 
+11/09/2024 02:48:37.186PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(2015450469<open>)] for JPA transaction
+
+maker some operation inside the method going to another method.
+11/09/2024 02:48:37.186PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
+Hibernate: select common_trx_file_summary_seq.nextval from dual
+11/09/2024 02:48:37.209PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(2015450469<open>)] for JPA transaction
+11/09/2024 02:48:37.209PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
+Hibernate: insert into corp_common_trx_file_summary (authorize_date, authorized_by, cancel_date, cancelled_by, charge_calculation_note, charge_status, client_batch_transaction_no, company_id, cr_account, dr_account, file_name, inserted_by, insert_date, is_charge_applicable, module_type, parent_transaction_reference, payment_by, payment_date, payment_type_id, rejected_by, reject_date, tran_remarks, is_scheduled, sig_limit_id, source_channel, status, total_amount, total_bbl, total_bbl_amt, total_eft, total_eft_amount, total_invalid_charge, total_invalid_charge_amount, total_rtgs, total_rtgs_amt, total_rejected_bbl, total_rejected_bbl_amt, total_rejected_eft, total_rejected_eft_amt, total_rejected_rtgs, total_rejected_rtgs_amt, total_trx, total_valid_amount, total_valid_charge, total_valid_charge_amount, total_valid_trx, uploaded_file_type, optimistic_lock_version, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+11/09/2024 02:48:37.301PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 904, SQLState: 42000
+11/09/2024 02:48:37.301PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - ORA-00904: "SIGNATORY_ID": invalid identifier
+
+11/09/2024 02:48:37.308PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating transaction failed - marking existing transaction as rollback-only
+11/09/2024 02:48:37.308PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] DEBUG o.s.orm.jpa.JpaTransactionManager - Setting JPA transaction on EntityManager [SessionImpl(2015450469<open>)] rollback-only
+```
+
+
+
 
 
 
