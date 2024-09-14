@@ -21,4 +21,4 @@ if we want to convert a object to byte stream, We must have to implement the Ser
 
 Deserialization :
 If we talk about deserialization , deserialization  is way for achieved a object from    byte code by proper identity,  cause if JVM didn't find serialVersionUID
-then it will show an error called InvalidClassExcption.
+then it will show an error called InvalidClassException.

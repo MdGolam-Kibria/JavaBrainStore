@@ -3,7 +3,7 @@ package com.CrackCode.IIT_DU;
 public class BinarySearch {
 
     public static void main(String[] args) {
-        int[] sortedArray = {1,2,3,4,5,6,7,8,9};
+        int[] sortedArray = {1, 2, 3, 4, 5, 6, 7, 8, 9};
         int element = 7;
 
         int result = binarySearch(sortedArray, element);
