@@ -43,7 +43,7 @@
      ![image](https://user-images.githubusercontent.com/61331272/141931760-6301ad9f-3672-44e6-9003-f094fc9ad145.png)
      </b>
      
-     ```
+   ```java
      /**
      * Common method for getData from database using entity Manager
      */
@@ -80,7 +80,7 @@
         }
     }
     }
-     ```
+   ```
 
 
 
@@ -158,7 +158,7 @@
 <b><u>Answer :- </u></b> 
 <br/><h6><u>Procedure:-</u> </h6>
    
- ```
+ ```sql
  create procedure saveEmployeeex(
     stmt IN CLOB,
     output OUT number
@@ -218,7 +218,7 @@ END
   
   i)Create Package :-<br/>
 ![image](https://user-images.githubusercontent.com/61331272/140702489-bf05d732-fe2d-4c4b-a331-a77960cc60c2.png) <br/>
-```
+```sql
 create PACKAGE getAllEmployeeByPackage AS
     PROCEDURE getAll(
         e_disp OUT SYS_REFCURSOR
@@ -228,7 +228,7 @@ END getAllEmployeeByPackage;
 ```
   ii) create package body :-<br/>
 ![image](https://user-images.githubusercontent.com/61331272/140702622-bda1cdd4-014b-4ea6-8031-3b12897950c4.png) <br/>
-```
+```sql
 create package body getAllEmployeeByPackage as
     procedure getAll(
         e_disp OUT SYS_REFCURSOR
@@ -250,7 +250,7 @@ end getAllEmployeeByPackage;
 <br/><h6><u>Procedure:-</u> </h6>
    ![image](https://user-images.githubusercontent.com/61331272/140736643-7187ef37-c9ed-460e-b64e-1584063f50fd.png)
 <br/>
-```
+```sql
 procedure getEmployeeById(
         id_in IN EMPLOYEE.ID%type,
         e_disp OUT SYS_REFCURSOR
@@ -275,7 +275,7 @@ procedure getEmployeeById(
 <b><u>Answer :- </u></b> 
 <br/><h6><u>FUNCTION:-</u> </h6>
    ![image](https://user-images.githubusercontent.com/61331272/141075382-1e0ca616-fff1-42d8-8cdc-3f0c3310474d.png)<br/>
-   ```
+   ```sql
    create or replace function adder(n1 in number, n2 in number)
     return number
     is
@@ -290,7 +290,7 @@ end;
  
  ![image](https://user-images.githubusercontent.com/61331272/141075551-f52a26b5-64a1-43b2-ac8d-b14134c6f3bf.png) <br/>
  
- ```
+ ```sql
  select adder(12,8) as sum from DUAL;
  ```
  <br/>
@@ -302,7 +302,7 @@ end;
 
  ![image](https://user-images.githubusercontent.com/61331272/141611012-0817e928-308b-4914-8647-009d09eaccb3.png)
  <br/>
- ```
+ ```sql
  create procedure getEmployeeAllInsideFunctionCall(
     empl_idd IN EMPLOYEE.ID%type,
     e_disp OUT SYS_REFCURSOR
@@ -321,7 +321,7 @@ end;
  <br/>  
  
  
- ```
+ ```sql
  create function getEmployee(
     emp_id EMPLOYEE.ID%type
 ) return SYS_REFCURSOR
@@ -356,7 +356,7 @@ end;
    
  <br/>
  
- ```
+ ```sql
   CREATE SEQUENCE IncrementId
     INCREMENT BY 10
     START WITH 10
@@ -420,7 +420,7 @@ END getPersonByCallingView;
 <b><u>Answer :- </u></b> <br/><h6><u>All Query:-</u> </h6><br/>
    ![image](https://user-images.githubusercontent.com/61331272/141830877-8d47cd68-1963-4f0c-99b3-961d613f5f0b.png)
  
- ```
+ ```sql
   select CASE
            when e.ID = 7 then
                'This is 7'
@@ -439,7 +439,7 @@ from EMPLOYEE e;
 <b><u>Answer :- </u></b> <br/><h6><u>All Query:-</u> </h6><br/>
 <u>JSON demo</u></b>
 
-```
+```sql
 {
   "collectionType": 0,
   "billInfo": {
@@ -485,7 +485,7 @@ from EMPLOYEE e;
 
 </b>
    
- ```
+ ```sql
 SELECT
   AT.METADATA
 FROM
@@ -505,7 +505,7 @@ WHERE
    <b>11)How to run a sql script for Multiple operation without creating procedure in oracle  <br/></b>
 <b><u>Answer :- </u></b> <br/>
 
-```
+```sql
 DECLARE
     cursor allCallCenterAndAllOPS
     IS
@@ -567,7 +567,7 @@ ALTER TABLE STUDENT ADD NAME VARCHAR2(255);--FOR ADD [NAME] COLUMN FROM STUDENT 
 
 <b>NOTE:we didn't write logic here. :(</b>
 
-```
+```sql
 DECLARE
   L_CNT PLS_INTEGER;
 BEGIN
@@ -609,7 +609,7 @@ END;
 
 <b>CREATE SEQUENCE</b>
 
-```
+```sql
 create sequence SERVICE_REQUEST_TYPE_SEQ
     order
     nocache
@@ -619,7 +619,7 @@ create sequence SERVICE_REQUEST_TYPE_SEQ
 
 <b>CREATE SEQUENCE  generator</b>
 
-```
+```sql
 create trigger SERVICE_REQUEST_TYPE_SEQ_GEN
     before insert
     on SERVICE_REQUEST_TYPE
@@ -641,14 +641,14 @@ END;
   <b>15)How to get only date form current date and increment/decrement day using <b>ORACLE</b> query <br/></b>
 <b><u>Answer :- </u></b> <br/>
 
-```
+```sql
 SELECT TRUNC(SYSDATE-5) FROM DUAL;
 ```
 
  <b>16)get 3rd high salary using <b>ORACLE</b> query <br/></b>
 <b><u>Answer :- </u></b> <br/>
 
-```
+```sql
 SELECT n.TOTAL_BBL_AMT FROM (SELECT TOTAL_BBL_AMT
 FROM CORP_FILE_UPLOAD_INFO
 order by TOTAL_BBL_AMT DESC) n offset 3 rows fetch next 1 rows only;
@@ -658,7 +658,7 @@ order by TOTAL_BBL_AMT DESC) n offset 3 rows fetch next 1 rows only;
  <b>17)get one to many table data using <b>MS SQL</b> query <br/></b>
 <b><u>Answer :- </u></b> <br/>
 
-```
+```sql
 SELECT
     STRING_AGG(PN.phone,
     ',') as phoneNumber,--wil get result as comma separeted value like (01776767656,01531425247) 
@@ -685,7 +685,7 @@ group by
 
 ##If we want to short the comma separated value the SQL will be <br/>
 
-```
+```sql
 SELECT 
   STRING_AGG(PN.phone, ',') WITHIN GROUP (
     ORDER BY 
@@ -715,7 +715,7 @@ group by
 <b>18)if given value is null then return all otherwise return based on the given input using <b>ORACLE SQL</b> query <br/></b>
 <b><u>Answer :- </u></b> <br/>
 
-```
+```sql
 SELECT * FROM USERS WHERE USERNAME= (
     CASE WHEN :varname is null
     THEN
@@ -765,7 +765,7 @@ expdp uname/pass@orcl schemas=DPDC directory=DATA_PUMP_DIR dumpfile=DPDC_2020_11
 <b>21) parse comma separeted String to string arrary and make a lopp on that array using PLSQL <br/></b>
 <b><u>Answer :- </u></b> <br/>
 
-```
+```sql
     DECLARE
       input_string VARCHAR2(100) := 'kibria,anika,manik';
       string_array DBMS_SQL.VARCHAR2_TABLE;
@@ -788,7 +788,7 @@ expdp uname/pass@orcl schemas=DPDC directory=DATA_PUMP_DIR dumpfile=DPDC_2020_11
 <b>22) get second high salary using java stream api <br/></b>
 <b><u>Answer :- </u></b> <br/>
 
-```
+```java
     public static void main(String[] args) {
         int[] salaries = {100, 200, 500, 50, 30};
         int secondHighestSalary = Arrays.stream(salaries)
@@ -916,7 +916,7 @@ expdp uname/pass@orcl schemas=DPDC directory=DATA_PUMP_DIR dumpfile=DPDC_2020_11
 <b>29) Create <b>Oracle PL/SQL</b> trigger on table then update some column based on the triiger <br/></b>
 <b><u>Answer :- </u></b> <br/>
 
- ```
+ ```sql
 create trigger SET_DEFAULT_PASSWORD
     before update
     on USERS
@@ -1020,7 +1020,7 @@ public class NumberToBanglaTaka {
 <b>30) Example for get flatten hierarchy from a self join table.<br/></b>
 <b><u>Answer :- </u></b> <br/>
 
-```
+```sql
 
 CREATE TABLE employee (
   employee_id SERIAL PRIMARY KEY,
@@ -1083,6 +1083,207 @@ https://github.com/MdGolam-Kibria/JavaBrainStore/blob/master/src/main/java/com/C
 https://github.com/MdGolam-Kibria/JavaBrainStore/tree/master/src/main/java/com/CrackCode/javaInternalDataStructure/graph
 
 
+<b>33) RestTemplate for ignore SSL handshake and using proxy server <br/></b>
+<b><u>Answer :- </u></b> <br/>
+
+  1) ignore SSL handshake and using proxy server.
+
+
+     ```java   
+          @Bean("sslHandshakeIgnoreRestTemplate")
+          public RestTemplate sslHandshakeIgnoreRestTemplate() {
+              // Create a TrustManager that accepts all certificates
+              TrustManager[] trustAllCertificates = new TrustManager[] {
+                      new X509TrustManager() {
+                          public X509Certificate[] getAcceptedIssuers() {
+                              return null;
+                          }
+                          public void checkClientTrusted(X509Certificate[] certs, String authType) {}
+                          public void checkServerTrusted(X509Certificate[] certs, String authType) {}
+                      }
+              };
+      
+              try {
+                  // Set up a SSL context that ignores all certificate validation
+                  SSLContext sslContext = SSLContext.getInstance("SSL");
+                  sslContext.init(null, trustAllCertificates, new java.security.SecureRandom());
+                  HttpsURLConnection.setDefaultSSLSocketFactory(sslContext.getSocketFactory());
+      
+                  // Set up a hostname verifier that accepts all hostnames
+                  HostnameVerifier allHostsValid = (hostname, session) -> true;
+                  HttpsURLConnection.setDefaultHostnameVerifier(allHostsValid);
+              } catch (Exception e) {
+                  e.printStackTrace();
+              }
+      
+              // Create a RestTemplate with a SimpleClientHttpRequestFactory
+              // This factory allows disabling SSL certificate validation
+              RestTemplate restTemplate = new RestTemplate(clientHttpRequestFactory());
+      
+              return restTemplate;
+          }
+     ```
+
+
+2) ignore SSL handshake and using proxy server.
+
+     
+    ```java
+        @Bean("sslHandshakeIgnoreRestTemplate")
+        public RestTemplate sslHandshakeIgnoreRestTemplate() {
+            // Create a TrustManager that accepts all certificates
+            TrustManager[] trustAllCertificates = new TrustManager[] {
+                    new X509TrustManager() {
+                        public X509Certificate[] getAcceptedIssuers() {
+                            return null;
+                        }
+                        public void checkClientTrusted(X509Certificate[] certs, String authType) {}
+                        public void checkServerTrusted(X509Certificate[] certs, String authType) {}
+                    }
+            };
+        
+            try {
+                // Set up a SSL context that ignores all certificate validation
+                SSLContext sslContext = SSLContext.getInstance("SSL");
+                sslContext.init(null, trustAllCertificates, new java.security.SecureRandom());
+                HttpsURLConnection.setDefaultSSLSocketFactory(sslContext.getSocketFactory());
+        
+                // Set up a hostname verifier that accepts all hostnames
+                HostnameVerifier allHostsValid = (hostname, session) -> true;
+                HttpsURLConnection.setDefaultHostnameVerifier(allHostsValid);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        
+            // Create a RestTemplate with a  proxy server as gateway
+            SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
+            Proxy proxy =new Proxy(Proxy.Type.HTTP,new InetSocketAddress("172.25.4.170",8080));
+            // This factory allows disabling SSL certificate validation
+            requestFactory.setProxy(proxy);
+            
+            RestTemplate restTemplate = new RestTemplate(requestFactory);
+        
+            return restTemplate;
+        } ```
+
+
+
+<b>34) Handle api call exceptions using RestTemplate <br/></b>
+<b><u>Answer :- </u></b> <br/>
+
+   ```java
+        private BaseResponseBody<?> handleExceptions(Exception e) {
+        try {
+            if (e instanceof HttpServerErrorException) {
+                if (((HttpServerErrorException) e).getStatusCode() == HttpStatus.INTERNAL_SERVER_ERROR) {
+                    String responseBody500 = ((HttpServerErrorException) e).getResponseBodyAsString();
+                    logger.error("[NSU] Nsu server return INTERNAL SERVER ERROR and the response body is : {}", responseBody500);
+                    return ResponseBuilder.getFailureResponse(HttpStatus.SERVICE_UNAVAILABLE,
+                            "NSU System did not respond as per our expectation. " +
+                                    "You can try again or you can proceed to collect using 'North South University (Offline)' merchant.", e);
+                }
+            }
+            //if (e instanceof ResourceAccessException) {
+            Throwable cause = e.getCause();
+            if (cause instanceof ConnectException) {
+                //@INFO This usually means the server is unreachable. This could be due to the server being down, incorrect IP/hostname, or network issues.
+                return ResponseBuilder.getFailureResponse(HttpStatus.SERVICE_UNAVAILABLE,
+                        "Unable to connect to the NSU System. Please check if the system is up and reachable " +
+                                "or you can proceed to collect using 'North South University (Offline)' merchant.", e);
+            } else if (cause instanceof SocketTimeoutException) {
+                //@INFO This happens when the connection or read operation times out. You might need to increase your timeout settings or check the server's response times.
+                return ResponseBuilder.getFailureResponse(HttpStatus.SERVICE_UNAVAILABLE,
+                        "NSU System did not respond within the anticipated time. " +
+                                "Please contact with your administrator.", e);
+            } else if (cause instanceof UnknownHostException) {
+                //@INFO This indicates a DNS issue where the hostname cannot be resolved to an IP address.
+                return ResponseBuilder.getFailureResponse(HttpStatus.SERVICE_UNAVAILABLE,
+                        "NSU System host could not be determined. " +
+                                "You can proceed to collect using 'North South University (Offline)' merchant.", e);
+            } else if (cause instanceof NoRouteToHostException) {
+                //@INFO This means that the networking system is unable to find a route to the specified host, often due to network configuration issues.
+                return ResponseBuilder.getFailureResponse(HttpStatus.SERVICE_UNAVAILABLE,
+                        "No route to the NSU System host." +
+                                " You can proceed to collect using 'North South University (Offline)' merchant.", e);
+            } else if (cause instanceof PortUnreachableException) {
+                //specific exception in Java's networking API that occurs when an attempt to connect to a specific port on a remote host fails because the port is unreachable
+                return ResponseBuilder.getFailureResponse(HttpStatus.SERVICE_UNAVAILABLE,
+                        "Defined port Unreachable." +
+                                " You can proceed to collect using 'North South University (Offline)' merchant.", e);
+            } else if (cause instanceof ConnectionResetException) {
+                //that indicates a connection was forcibly closed by a peer. This exception often occurs when the server unexpectedly terminates the connection.
+                return ResponseBuilder.getFailureResponse(HttpStatus.SERVICE_UNAVAILABLE,
+                        "Server unexpectedly terminates the connection." +
+                                " Please contact with your administrator.", e);
+            } else if (cause instanceof IOException) {
+                //@INFO This is a broad exception for I/O issues, which could be due to stream interruptions, unexpected closures, or other input/output errors
+                return ResponseBuilder.getFailureResponse(HttpStatus.SERVICE_UNAVAILABLE,
+                        "An I/O error occurred while trying to reach the NSU System. " +
+                                "Please contact with your administrator.", e);
+            }
+            // }
+            return ResponseBuilder.getFailureResponse(HttpStatus.INTERNAL_SERVER_ERROR,
+                    "[NSU] Something went wrong during call NSU API. Please contact with your administrator.", e);
+        } catch (Exception exception) {
+            logger.error("[NSU] Something went wrong during handle NSU api call exception :{}", exception.getMessage(), exception);
+            return ResponseBuilder.getFailureResponse(HttpStatus.INTERNAL_SERVER_ERROR,
+                    "[NSU] Something went wrong during call NSU API. Please contact with your administrator.", exception);
+        }
+    }
+ ```
+
+
+
+<b>35) About Redis vs Db <br/></b>
+<b><u>Answer :- </u></b> <br/>
+
+https://gist.github.com/MdGolam-Kibria/594cd446444e9a23ef7e75927c0e9a2e
+
+
+
+<b>36) Log a transaction lifecycle <br/></b>
+<b><u>Answer :- </u></b> <br/>
+
+```yml
+
+#For log full transaction life cycle
+logging:
+  level:
+    org:
+      springframework:
+        orm:
+          jpa: DEBUG
+```
+
+Result : 
+
+```
+
+11/09/2024 02:48:35.295PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] INFO  c.b.c.a.s.H2H.impl.H2HServiceImpl - xlsx File found to be parsed
+11/09/2024 02:48:35.297PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(2015450469<open>)] for JPA transaction
+11/09/2024 02:48:35.297PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] DEBUG o.s.orm.jpa.JpaTransactionManager - Creating new transaction with name [com.bbl.corpnet.api.service.H2H.H2HLegacyTransactionUploader.uploadBankExcel]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+11/09/2024 02:48:35.299PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] DEBUG o.s.orm.jpa.JpaTransactionManager - Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@13917d1f]
+11/09/2024 02:48:35.301PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] INFO  c.b.c.a.s.H.H2HLegacyTransactionUploader - Upload Bank Excel is called
+11/09/2024 02:48:35.304PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] INFO  c.b.c.a.s.H.H2HLegacyTransactionUploader - Reading XL file:/home/golamkibria/bracBank/corpnet-api/h2hFiles/CORPNET/11-09-2024/Third_Party_Transfer(1).xlsx
+
+11/09/2024 02:48:35.779PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] INFO  c.b.c.a.s.H.H2HLegacyTransactionUploader - Ready to call maker API for user:C3S_MAKER, companyId:4280
+11/09/2024 02:48:35.779PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(2015450469<open>)] for JPA transaction
+11/09/2024 02:48:35.779PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
+11/09/2024 02:48:35.798PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] INFO  c.b.c.a.m.s.i.UniversalTransactionMakerService - Maker API Request Payload 
+11/09/2024 02:48:37.186PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(2015450469<open>)] for JPA transaction
+
+maker some operation inside the method going to another method.
+11/09/2024 02:48:37.186PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
+Hibernate: select common_trx_file_summary_seq.nextval from dual
+11/09/2024 02:48:37.209PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] DEBUG o.s.orm.jpa.JpaTransactionManager - Found thread-bound EntityManager [SessionImpl(2015450469<open>)] for JPA transaction
+11/09/2024 02:48:37.209PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating in existing transaction
+Hibernate: insert into corp_common_trx_file_summary (authorize_date, authorized_by, cancel_date, cancelled_by, charge_calculation_note, charge_status, client_batch_transaction_no, company_id, cr_account, dr_account, file_name, inserted_by, insert_date, is_charge_applicable, module_type, parent_transaction_reference, payment_by, payment_date, payment_type_id, rejected_by, reject_date, tran_remarks, is_scheduled, sig_limit_id, source_channel, status, total_amount, total_bbl, total_bbl_amt, total_eft, total_eft_amount, total_invalid_charge, total_invalid_charge_amount, total_rtgs, total_rtgs_amt, total_rejected_bbl, total_rejected_bbl_amt, total_rejected_eft, total_rejected_eft_amt, total_rejected_rtgs, total_rejected_rtgs_amt, total_trx, total_valid_amount, total_valid_charge, total_valid_charge_amount, total_valid_trx, uploaded_file_type, optimistic_lock_version, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+11/09/2024 02:48:37.301PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 904, SQLState: 42000
+11/09/2024 02:48:37.301PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - ORA-00904: "SIGNATORY_ID": invalid identifier
+
+11/09/2024 02:48:37.308PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] DEBUG o.s.orm.jpa.JpaTransactionManager - Participating transaction failed - marking existing transaction as rollback-only
+11/09/2024 02:48:37.308PM 01001DF1F0CD4FA0A05A831F1B402F79 [http-nio-8442-exec-1] DEBUG o.s.orm.jpa.JpaTransactionManager - Setting JPA transaction on EntityManager [SessionImpl(2015450469<open>)] rollback-only
+```
 
 
 
