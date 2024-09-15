@@ -1,25 +1,42 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complex Table Example</title>
-
-    <!-- Include jQuery and DataTables CSS/JS -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-
+    <title>DataTables - Merge Cells</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
     <style>
         /* General Table Styles */
         table {
             border-collapse: collapse;
-            width: 100%;
+            width: 90%;
             table-layout: auto; /* Allows columns to adjust dynamically */
+        }
+
+        table.dataTable tbody th, table.dataTable tbody td {
+            padding: 0 0 0 0 !important;
+        }
+
+        table.dataTable thead th, table.dataTable thead td {
+            padding: 0 0 0 0 !important;
+        }
+
+        .dataTables_wrapper .dataTables_filter {
+            /*search button and filter option*/
+            text-align: right;
+            margin-bottom: 13px !important;
+        }
+
+        table.dataTable, table.dataTable th, table.dataTable td {
+            box-sizing: border-box;
+            height: 100%!important;
+        }
+
+        table.dataTable {
+            border-collapse: collapse;
+            border-spacing: 0;
         }
 
         th, td {
@@ -33,7 +50,6 @@
         .fixed-column {
             position: sticky;
             left: 0;
-            background-color: #eee4e4; /* Ensures readability */
             z-index: 1; /* Keeps the fixed column on top */
         }
 
@@ -86,39 +102,32 @@
             border-right: 1px solid black;
         }
 
-        /* Button in the header */
-        .header-button {
-            border: none; /* Remove border */
-            background: none; /* No background */
-            padding: 6%;
-            margin: 0;
-        }
 
         /* Styling to ensure the button spans full height */
         .header-multi-column div {
             align-items: stretch; /* Ensures the button spans full height */
         }
 
-        /* Optional: Add hover effect for better UX */
-        .header-button:hover {
-            cursor: pointer;
-            color: blue; /* Change color on hover */
-        }
+
     </style>
 </head>
-<body class="ml-4 mr-4 mt-4">
-
-<table id="example" class="table table-striped" style="width:100%">
+<body>
+<table id="example" class="display" style="width:100%">
     <thead>
     <tr>
-        <th class="fixed-column" style="background-color: #e4e9ea; border-bottom: 1px solid black; text-align: center">Fixed Column</th>
-        <th class="multi-row-cell m-0 p-0">
+        <th style="border-bottom: 2px solid black;
+                                    text-align: center">
+            Fixed Column
+        </th>
+        <th class="multi-row-cell m-0 p-0" style="border-bottom: 2px solid black;
+                            text-align: center">
+
             <div>
-                <div><p class="header-button">Beneficiary Acc</p></div>
-                <div><p class="header-button">Beneficiary Name</p></div>
-                <div><p class="header-button">Amount</p></div>
-                <div><p class="header-button">Narration</p></div>
-                <div><p class="header-button">Mobile No</p></div>
+                <div>Beneficiary Acc</div>
+                <div>Beneficiary Name</div>
+                <div>Amount</div>
+                <div>Narration</div>
+                <div>Mobile No</div>
             </div>
         </th>
     </tr>
@@ -127,13 +136,27 @@
     <tr>
         <td class="fixed-column">
             <div>
-                <a href="#" onclick="alert('show group details')">A</a>
+                <p onclick="alert('show group details')">A</p>
             </div>
             <div>
                 <p>parentRef</p>
             </div>
         </td>
-        <td class="multi-row-cell m-0 p-0">
+        <td class="multi-row-cell" style="height: 100%">
+            <div>
+                <div>Row 1, Col 2 - Cell 1.1</div>
+                <div>Row 1, Col 2 - Cell 1.2</div>
+                <div>Row 1, Col 2 - Cell 1.3</div>
+                <div>Row 1, Col 2 - Cell 1.3</div>
+                <div>Row 1, Col 2 - Cell 1.3</div>
+            </div>
+            <div>
+                <div>Row 1, Col 2 - Cell 1.1</div>
+                <div>Row 1, Col 2 - Cell 1.2</div>
+                <div>Row 1, Col 2 - Cell 1.3</div>
+                <div>Row 1, Col 2 - Cell 1.3</div>
+                <div>Row 1, Col 2 - Cell 1.3</div>
+            </div>
             <div>
                 <div>Row 1, Col 2 - Cell 1.1</div>
                 <div>Row 1, Col 2 - Cell 1.2</div>
@@ -145,7 +168,7 @@
                 <div>Row 1, Col 2 - Cell 2.1</div>
                 <div>Row 1, Col 2 - Cell 2.2</div>
                 <div>Row 1, Col 2 - Cell 2.3</div>
-                <div>Row 1, Col 2 - Cell 2.3</div>
+                <div>Row 1, Col 2 -kibria</div>
                 <div>Row 1, Col 2 - Cell 2.3</div>
             </div>
             <div>
@@ -160,19 +183,19 @@
     <tr>
         <td class="fixed-column">
             <div>
-                <a href="#" onclick="alert('show group details')">B</a>
+                <p onclick="alert('show group details')">B</p>
             </div>
             <div>
-                <p>parentRef</p>
+                <p>parentReff</p>
             </div>
         </td>
-        <td class="multi-row-cell m-0 p-0">
+        <td class="multi-row-cell">
             <div>
                 <div>Row 1, Col 2 - Cell 1.1</div>
                 <div>Row 1, Col 2 - Cell 1.2</div>
                 <div>Row 1, Col 2 - Cell 1.3</div>
                 <div>Row 1, Col 2 - Cell 1.3</div>
-                <div>Row 1, Col 2 - Cell 1.3</div>
+                <div>Row 1, Col 2 - Cell wow</div>
             </div>
             <div>
                 <div>Row 1, Col 2 - Cell 2.1</div>
@@ -184,7 +207,7 @@
             <div>
                 <div>Row 1, Col 2 - Cell 3.1</div>
                 <div>Row 1, Col 2 - Cell 3.2</div>
-                <div>Row 1, Col 2 - Cell 3.3</div>
+                <div>Row 1, awesome 2 - Cell 3.3</div>
                 <div>Row 1, Col 2 - Cell 3.3</div>
                 <div>Row 1, Col 2 - Cell 3.3</div>
             </div>
@@ -194,11 +217,37 @@
 </table>
 
 <script>
-    // Apply DataTables to the table
     $(document).ready(function () {
-        $('#example').DataTable();
+        var table = $('#example').DataTable({
+            lengthMenu: [[5, 10, 15, 100], [5, 10, 15, 100]],
+            paging: true,
+            searching: true,
+            columnDefs: [{'orderable': false, 'targets': [0, 1]}],
+            drawCallback: function (settings) {
+                mergeTableCells();
+            }
+        });
+
+        function mergeTableCells() {
+            var rows = $('#example tbody tr');
+            var last = null;
+            var rowspan = 1;
+
+            rows.each(function (index, row) {
+                var currentCell = $(row).find('td:first');
+                var currentText = currentCell.text();
+
+                if (last === currentText) {
+                    rowspan++;
+                    currentCell.remove();
+                    $(rows[index - rowspan + 1]).find('td:first').attr('rowspan', rowspan);
+                } else {
+                    last = currentText;
+                    rowspan = 1;
+                }
+            });
+        }
     });
 </script>
-
 </body>
 </html>
