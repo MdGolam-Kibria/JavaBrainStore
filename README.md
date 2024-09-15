@@ -1291,5 +1291,29 @@ Hibernate: insert into corp_common_trx_file_summary (authorize_date, authorized_
 
 
 
+<b>37) Local git set up guide with GitHub. using this way we can view the contributions  summary to our GitHub account.<br/></b>
+<b><u>Answer :- </u></b> <br/>
+
+  ## Local git set up guide with GitHub.
+
+ ![Screenshot from 2024-09-15 10-12-27](https://github.com/user-attachments/assets/bfddfd01-edc1-49ff-bc12-73bd168f75ea)
+
+    
+    TO set up the GitHub with local git need to hit commad shared below,
+    1) set up the email address which is use in your GitHub email setting.
+    ```
+    git config --global user.email "mknipa.iit@gmail.com"
+    ```
+    2) check now to configuration successgully set or not using hit command below,
+    ```
+    git config --global user.email
+    ```
+    <b>Note:</b> the result should be same as the setup email.
+
+
+
+
+
+
 
 
