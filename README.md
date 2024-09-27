@@ -1332,8 +1332,9 @@ Hibernate: insert into corp_common_trx_file_summary (authorize_date, authorized_
       ```
       sudo chmod -R 777 /path/to/your/folder
       ```
-          -R: This option applies the permissions recursively, meaning all files and subdirectories within the folder will also get these permissions.
-          777: This sets read (r), write (w), and execute (x) permissions for the owner, group, and others.
+
+      -R: This option applies the permissions recursively, meaning all files and subdirectories within the folder will also get these permissions.
+      777: This sets read (r), write (w), and execute (x) permissions for the owner, group, and others.
       
       You can confirm the permissions by running the following command:
       
@@ -1346,7 +1347,7 @@ Hibernate: insert into corp_common_trx_file_summary (authorize_date, authorized_
       drwxrwxrwx
       ```
 
-3) Run a command in the background (Ubuntu)
+4) Run a command in the background (Ubuntu)
 
       To run a command like openfortivpn in the background:
       
