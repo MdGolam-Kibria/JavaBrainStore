@@ -1314,6 +1314,61 @@ Hibernate: insert into corp_common_trx_file_summary (authorize_date, authorized_
 
 
 
+<b>38) Ubuntu useful commands <br/></b>
+
+
+1) Remove a software
+     
+     To remove a software (like FortiClient) from your system, use the command below:
+     
+     ```
+     sudo apt-get remove --purge forticlient
+     ```
+
+2) Set all permissions in a directory
+      
+      To give all users full read, write, and execute permissions on a directory, use the following command:
+      
+      ```
+      sudo chmod -R 777 /path/to/your/folder
+      ```
+          -R: This option applies the permissions recursively, meaning all files and subdirectories within the folder will also get these permissions.
+          777: This sets read (r), write (w), and execute (x) permissions for the owner, group, and others.
+      
+      You can confirm the permissions by running the following command:
+      
+      ```
+      ls -l /path/to/your/folder
+      ```
+      
+      The output should look like:
+      ```
+      drwxrwxrwx
+      ```
+
+3) Run a command in the background (Ubuntu)
+
+      To run a command like openfortivpn in the background:
+      
+      ```
+      sudo openfortivpn ccc.brac.com:8098 -u golam.rabbani
+      ```
+      
+      If you want to send this process to the background, follow these steps:
+      
+          Press CTRL+Z to pause the process.
+          Type bg to resume the process in the background.
+          Use disown to detach the process from the terminal.
+      
+      You can verify if the service is running in the background using this command:
+      
+      ```
+      ps -ef | grep openfortivpn
+      ```
+
+      
+
+
 
 
 
