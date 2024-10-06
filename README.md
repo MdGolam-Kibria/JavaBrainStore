@@ -1371,5 +1371,15 @@ Hibernate: insert into corp_common_trx_file_summary (authorize_date, authorized_
 
 
 
+<b>39) Request Response logging including request served time using AOP example.<br/></b>
+<b><u>Answer :- </u></b> <br/>
+
+Click here : (https://gist.github.com/MdGolam-Kibria/d3a7023084f9fcaa0297ded37852c508)
+
+
+
+
+
+
 
 
