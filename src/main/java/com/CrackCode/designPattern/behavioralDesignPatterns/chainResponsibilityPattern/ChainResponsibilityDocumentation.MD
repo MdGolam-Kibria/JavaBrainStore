@@ -24,7 +24,8 @@ which allows an object to send a request to other objects without knowing who is
 
 
 Flow example :
-<center>
+
 ![flowExample.png](flowExample.png)
-</center>
+
+
 
