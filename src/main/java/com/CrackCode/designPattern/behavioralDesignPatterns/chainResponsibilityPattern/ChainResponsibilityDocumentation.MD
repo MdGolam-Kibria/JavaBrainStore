@@ -19,3 +19,8 @@ which allows an object to send a request to other objects without knowing who is
         **Fallback Mechanism** 
                 If a request isn’t handled by any of the handlers, the chain can include a fallback option. This means there’s a default way to deal with requests 
                 that don’t fit anywhere else.
+
+
+Flow example :
+
+![flowExample.png](flowExample.png)
