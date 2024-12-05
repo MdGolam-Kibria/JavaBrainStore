@@ -1378,6 +1378,122 @@ Click here : (https://gist.github.com/MdGolam-Kibria/d3a7023084f9fcaa0297ded3785
 
 
 
+<b>40) HaProxy config example.<br/></b>
+<b><u>Answer :- </u></b> <br/>
+```config
+global
+        log /dev/log local0
+        # log 127.0.0.1:514 local0
+        chroot /var/lib/haproxy
+        stats timeout 30s
+
+
+defaults
+        log     global
+        mode    http
+        option  dontlognull
+        option  httplog
+        timeout connect 500000
+        timeout client  5000000
+        timeout server  5000000
+
+frontend mysite
+  bind :9014
+  http-request auth unless { http_auth(mycredentials) }
+  # route to a backend based on path's prefix
+  use_backend Report-mw if { path /report } || { path_beg /report/ }
+  use_backend Finacle-mw if { path /finacle } || { path_beg /finacle/ }
+  use_backend Bach-mw if { path /bach } || { path_beg /bach/ }
+  use_backend Corpapi-mw if { path /corpnet-api } || { path_beg /corpnet-api/ } 
+  use_backend bmw if { path /billerMw } || { path_beg /billerMw/ }
+  use_backend app-vam if { path /api } || { path_beg /api/ }
+  use_backend trade-mw if { path /trade } || { path_beg /trade/ }
+  use_backend transaction-mw if { path /transaction-mw } || { path_beg /transaction-mw/ }
+  use_backend CorpCare-mw if { path /cc-mw } || { path_beg /cc-mw/ }
+
+backend Report-mw
+  balance roundrobin
+  server server171 172.25.4.171:9005 check maxconn 30
+  server server92 172.25.5.92:9005  check maxconn 30
+
+backend Finacle-mw
+  balance roundrobin
+  option forwardfor
+  option httpchk GET /finacle/health
+  server server171 172.25.4.171:9005 check maxconn 30
+  server server92 172.25.5.92:8062  check maxconn 30
+
+
+backend transaction-mw
+  balance roundrobin
+  option forwardfor
+  option httpchk GET /transaction-mw/health
+  server server171 172.25.4.171:9005 check maxconn 30
+  server server92 172.25.5.92:9005  check maxconn 30
+
+
+backend Bach-mw
+  balance roundrobin
+  option httpchk GET /bach/health
+  server server171 172.25.4.171:9005 check maxconn 30
+  server server92 172.25.5.92:9005  check maxconn 30
+
+backend Corpapi-mw
+  balance roundrobin
+  option httpchk GET /corpnet-api/health
+  #http-request replace-path /corpnet-api(/)?(.*) /\2
+  server server171 172.25.4.171:9002 check maxconn 30
+  server server92 172.25.5.92:9002  check maxconn 30
+
+backend bmw
+  balance roundrobin
+  option httpchk GET /billerMw/health
+  server server171 172.25.4.171:9005 check maxconn 30
+  server server92 172.25.5.92:9005  check maxconn 30
+
+backend app-vam
+  balance roundrobin
+  option httpchk GET /api/health
+  server server171 172.25.4.171:9005 check maxconn 30
+  server server92 172.25.5.92:9005  check maxconn 30
+
+backend dd-erapid-callback
+  balance roundrobin
+  option httpchk GET /api/health
+  server server171 172.25.4.171:9005 check maxconn 30
+  server server92 172.25.5.92:9005  check maxconn 30
+
+backend trade-mw
+  balance roundrobin
+  option httpchk GET /trade/service/health
+  server server171 172.25.4.171:9005 check maxconn 30
+  server server92 172.25.5.92:9005  check maxconn 30
+  
+backend CorpCare-mw
+  balance roundrobin
+  option httpchk GET /cc-mw/
+  server server171 172.25.4.171:9005 check maxconn 30
+  server server92 172.25.5.92:9005  check maxconn 30
+
+userlist mycredentials
+   user joe password $5$kuerVW/XiVT3rmDw$zhScxDJLtCaqWNAvaaP2aaXYPDU.NAFzJF3Iw077934
+   user alice password $5$1Hz6sm1AMf.bhg3F$HvyZ15rLE3VujvvhbgZAOO5ceL1p6iielHZfYtsrhI3
+   user mark password $5$fzFd5PQo3KLyZB2F$K7QdJ/AgzEK3V7eNIMbj.uwpUaYu17.thMALw5cBUR6
+
+
+listen stats
+  bind *:9015
+  stats enable
+  stats refresh 10s
+  stats hide-version
+  stats show-node
+  stats uri /haproxy?stats
+  stats auth admin:adminspassword
+
+```
+
+
+
 
 
 
