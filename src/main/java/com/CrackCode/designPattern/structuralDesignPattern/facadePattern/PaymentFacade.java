@@ -4,14 +4,14 @@ class PaymentFacade {
     private AccountChecker accountChecker;
     private PinChecker pinChecker;
     private BalanceChecker balanceChecker;
-    private LedgerService ledgerService;
+    private LoggingService loggingService;
     private NotificationService notificationService;
 
     public PaymentFacade() {
         this.accountChecker = new AccountChecker();
         this.pinChecker = new PinChecker();
         this.balanceChecker = new BalanceChecker();
-        this.ledgerService = new LedgerService();
+        this.loggingService = new LoggingService();
         this.notificationService = new NotificationService();
     }
 
@@ -37,7 +37,7 @@ class PaymentFacade {
         }
 
 
-        ledgerService.makeEntry(cardNumber, amount, operationType);
+        loggingService.makeEntry(cardNumber, amount, operationType);
 
         notificationService.sendNotification(cardNumber, "Your payment of $" + amount + " has been processed.");
 
