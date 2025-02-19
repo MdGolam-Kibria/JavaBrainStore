@@ -1493,6 +1493,15 @@ listen stats
 ```
 
 
+<b>41) Check SQL performance<br/></b>
+<b><u>Answer :- </u></b> <br/>
+
+```sql
+    EXPLAIN PLAN FOR
+    SELECT id,CHARGE_NAME,VAT_NAME FROM CHARGE_TRANSACTION_SUMMARY_V2 CTS
+    WHERE CTS.BATCH_REFERENCE = '190225154723873P';
+    SELECT * FROM TABLE (DBMS_XPLAN.DISPLAY);
+```
 
 
 
