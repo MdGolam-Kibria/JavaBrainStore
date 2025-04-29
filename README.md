@@ -1589,6 +1589,54 @@ If a request lacks a valid CSRF token, Spring Security rejects it, thereby mitig
 
 
 
+<b>43)Get current server all available ip address using java <br/></b>
+<b><u>Answer :- </u></b> <br/><br>
+
+```java
+private List<Inet4Address> getInet4Addresses()  {
+        List<Inet4Address> inet4Addresses = new ArrayList<Inet4Address>();
+
+        try {
+            Enumeration<NetworkInterface> nets = NetworkInterface.getNetworkInterfaces();
+            for (NetworkInterface netint : Collections.list(nets)) {
+                Enumeration<InetAddress> inetAddresses = netint.getInetAddresses();
+                for (InetAddress inetAddress : Collections.list(inetAddresses)) {
+                    if (inetAddress instanceof Inet4Address && !inetAddress.isLoopbackAddress()) {
+                        inet4Addresses.add((Inet4Address) inetAddress);
+                    }
+                }
+            }
+
+            log.info("[BPTransactionCutoffService] - Internet 4 Addresses : {} ", inet4Addresses);
+        }catch (Exception exception){
+            log.info("[BPTransactionCutoffService] getInet4Addresses - Exception : {} ", exception.getMessage());
+
+        }
+        return inet4Addresses;
+    }
+```
+
+
+```java
+    private  List<String> getListHost4Address() {
+        List<Inet4Address> inet4 = getInet4Addresses();
+        List<String> hostAddressList = new ArrayList<>();
+
+        for(Inet4Address inet4Address : inet4){
+            String hostAddress = !inet4Address.getHostAddress().isEmpty()
+                    ? inet4Address.getHostAddress()
+                    : "";
+
+            hostAddressList.add(hostAddress);
+        }
+
+        return hostAddressList;
+    }
+```
+
+
+
+
 
 
 
