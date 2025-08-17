@@ -1636,6 +1636,17 @@ private List<Inet4Address> getInet4Addresses()  {
 
 
 
+<b>44)ORM Flow <br/></b>
+<b><u>Answer :- </u></b> <br/><br>
+
+<img width="781" height="381" alt="hibernate-jpa-JDBC" src="https://github.com/user-attachments/assets/c6cd83f6-9dea-4f73-8f47-37a9fff0245d" />
+
+
+
+
+
+
+
 
 
 
