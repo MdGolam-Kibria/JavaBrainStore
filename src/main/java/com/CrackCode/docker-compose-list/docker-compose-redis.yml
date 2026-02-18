@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  redis:
+    image: redis:7
+    container_name: redis-server
+    ports:
+      - "6379:6379"
+    command: >
+      redis-server /usr/local/etc/redis/redis.conf
+      --appendonly yes
+      --appendfsync everysec
+      --save "900 1"
+      --save "300 10"
+      --save "60 10000"
+    volumes:
+      - redis-data:/data
+      - ./redis.conf:/usr/local/etc/redis/redis.conf
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    restart: unless-stopped
+
+volumes:
+  redis-data:
+    driver: local
+

@@ -1,0 +1,7 @@
+More tools installed and configured the following on server: <your-ip>
+
+Jaeger UI (distributed tracing)  : http://<your-ip>:16686
+Grafana (dashboards)             : http://<your-ip>:3000
+Loki (Centralized Logging)       : http://<your-ip>:3100
+Prometheus (metrics)     	     : http://<your-ip>:9090
+Sonarqube (Security)             : http://<your-ip>:9090
