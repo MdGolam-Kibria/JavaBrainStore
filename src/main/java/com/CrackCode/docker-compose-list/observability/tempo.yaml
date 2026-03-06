@@ -1,15 +1,56 @@
 server:
   http_listen_port: 3200
 
+target: all
+
+memberlist:
+  join_members: []
+
 distributor:
   receivers:
     otlp:
       protocols:
         grpc:
+          endpoint: "0.0.0.0:4317"
         http:
+          endpoint: "0.0.0.0:4318"
+
+ingester:
+  max_block_duration: 5m
+  lifecycler:
+    ring:
+      replication_factor: 1
+      kvstore:
+        store: memberlist
+
+# ── Fixes "empty ring" in Tempo 2.10+ ────────────────────────────────────────
+ingester_client:
+  grpc_client_config:
+    grpc_compression: gzip
+
+querier:
+  frontend_worker:
+    frontend_address: ""
+
+query_frontend:
+  search:
+    duration_slo: 5s
+    throughput_bytes_slo: 1.073741824e+09
+  trace_by_id:
+    duration_slo: 5s
 
 storage:
   trace:
     backend: local
     local:
-      path: /tmp/tempo
+      path: /var/tempo/blocks
+    wal:
+      path: /var/tempo/wal
+
+# ── Disable partition ring (new in 2.10, not suitable for single node) ────────
+overrides:
+  defaults:
+    ingestion:
+      rate_limit_bytes: 15000000
+      burst_size_bytes: 20000000
+      max_traces_per_user: 10000

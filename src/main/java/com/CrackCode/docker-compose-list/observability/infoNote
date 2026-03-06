@@ -6,12 +6,12 @@ Application (.NET / Java etc.)
         | OTLP
         v
 OpenTelemetry Collector
-   |        |        |
-   v        v        v
- Tempo     Loki   Prometheus
-(trace)   (logs)   (metrics)
-     \      |      /
-        Grafana
+     |          |         |
+     v          v         v
+   Tempo       Loki    Prometheus
+ (traces)     (logs)    (metrics)
+        \        |        /
+          ---- Grafana ----
 
 
 
@@ -20,5 +20,19 @@ Grafana (dashboards)             : http://<your-ip>:3000
 Loki (Centralized Logging)       : http://<your-ip>:3100
 Prometheus (metrics)     	     : http://<your-ip>:9090
 
+| Service                 | Port | Access From Browser                            |
+| ----------------------- | ---- | ---------------------------------------------- |
+| Grafana                 | 3000 | [http://localhost:3000](http://localhost:3000) |
+| Prometheus              | 9090 | [http://localhost:9090](http://localhost:9090) |
+| Grafana Loki            | 3100 | API only                                       |
+| Grafana Tempo           | 3200 | API only                                       |
+| OpenTelemetry Collector | 4317 | application telemetry                          |
 
 
+
+add below URls to your grafana dashboards
+
+http://grafana:3000
+http://loki:3100
+http://tempo:3200
+http://prometheus:9090
