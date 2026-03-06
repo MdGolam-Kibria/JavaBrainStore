@@ -8,8 +8,12 @@ exporters:
   logging:
     loglevel: debug
 
-  jaeger:
-    endpoint: jaeger:14250
+#  jaeger:
+#    endpoint: jaeger:14250
+#    tls:
+#      insecure: true
+  tempo:
+    endpoint: tempo:4317
     tls:
       insecure: true
 

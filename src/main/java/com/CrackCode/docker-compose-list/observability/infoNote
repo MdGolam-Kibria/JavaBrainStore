@@ -1,0 +1,24 @@
+Observability Data Flow
+
+
+Application (.NET / Java etc.)
+        |
+        | OTLP
+        v
+OpenTelemetry Collector
+   |        |        |
+   v        v        v
+ Tempo     Loki   Prometheus
+(trace)   (logs)   (metrics)
+     \      |      /
+        Grafana
+
+
+
+Tempo / Jaeger                   : http://<your-ip>:3200
+Grafana (dashboards)             : http://<your-ip>:3000
+Loki (Centralized Logging)       : http://<your-ip>:3100
+Prometheus (metrics)     	     : http://<your-ip>:9090
+
+
+
