@@ -36,3 +36,7 @@ http://grafana:3000
 http://loki:3100
 http://tempo:3200
 http://prometheus:9090
+
+
+docker compose -f docker-compose-observability.yml up
+docker compose -f docker-compose-observability.yml down
