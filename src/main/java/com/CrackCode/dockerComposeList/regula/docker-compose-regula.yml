@@ -1,0 +1,79 @@
+version: '3.8'
+
+services:
+  regula-face:
+    image: regulaforensics/face-api:7.1
+    container_name: regula-face-sdk
+    restart: unless-stopped
+
+    ports:
+      - "41101:41101"
+
+    environment:
+      # License
+      - REGULA_LICENSE_PATH=/app/license/regula.license
+
+      # Performance — increase for face matching ML inference
+      - DOTNET_ThreadPool_UnfairSemaphoreSpinLimit=70
+      - ASPNETCORE_URLS=http://+:41101
+
+      # Logging
+      - Logging__LogLevel__Default=Information
+      - Logging__LogLevel__Microsoft=Warning
+
+    volumes:
+      # License file — required
+      - ./license/regula.license:/app/license/regula.license:ro
+
+      # Persistent session/liveness storage
+      - regula-sessions:/app/sessions
+
+      # Optional: custom config
+      # - ./config/appsettings.json:/app/appsettings.json:ro
+
+    deploy:
+      resources:
+        limits:
+          memory: 4G        # face ML model needs at least 2G
+          cpus: '2.0'
+        reservations:
+          memory: 2G
+          cpus: '1.0'
+
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:41101/api/healthz"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s    # give model time to load on first start
+
+    networks:
+      - regula-net
+
+  nginx:
+    image: nginx:alpine
+    container_name: regula-nginx
+    restart: unless-stopped
+
+    ports:
+      - "8083:443"
+
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/ssl/cert.pem:/etc/nginx/ssl/cert.pem:ro
+      - ./nginx/ssl/key.pem:/etc/nginx/ssl/key.pem:ro
+
+    depends_on:
+      regula-face:
+        condition: service_healthy
+
+    networks:
+      - regula-net
+
+volumes:
+  regula-sessions:
+    driver: local
+
+networks:
+  regula-net:
+    driver: bridge

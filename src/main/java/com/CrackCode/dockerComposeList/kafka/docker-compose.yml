@@ -1,0 +1,95 @@
+# Local Kafka cluster for unified-examples' Kafka feature demos (see README.md's
+# "Kafka feature examples" section). Two real KRaft brokers — not ZooKeeper, and not a
+# single node standing in for a cluster — so replication, min-in-sync-replicas, and
+# multi-broker metadata actually mean something here, plus a web UI to watch topics,
+# partitions, consumer groups, and messages as the demo endpoints run.
+#
+# Usage: see the "Run a local Kafka cluster" section in README.md.
+
+services:
+  kafka1:
+    image: apache/kafka:4.3.1
+    container_name: unified-examples-kafka1
+    ports:
+      - "9092:29092"
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      # PLAINTEXT is for other brokers and kafka-ui talking over the Docker network;
+      # PLAINTEXT_HOST is what a client running on the host machine (e.g. this app via
+      # bootstrap-servers: localhost:9092) actually connects through.
+      KAFKA_LISTENERS: PLAINTEXT://:9092,CONTROLLER://:9093,PLAINTEXT_HOST://:29092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka1:9092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      # Both nodes vote in the same controller quorum — this is what makes it one
+      # cluster instead of two independent single-node brokers.
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka1:9093,2@kafka2:9093
+      # Fixed, shared across every node in the cluster — generated once for this compose
+      # file (any valid base64 KRaft cluster id works; this one has no special meaning).
+      CLUSTER_ID: CBQjXov-TzCD4bQhiAgXDw
+      # Only 2 brokers are running, so anything defaulting to Kafka's usual replication
+      # factor of 3 would fail outright. This also means every topic this example app
+      # publishes to (payment.created, order.shipped, inventory.reserved, and their
+      # retry/DLQ variants) is genuinely replicated across both brokers, not just
+      # tolerating 2 nodes for Kafka's own internal topics.
+      KAFKA_DEFAULT_REPLICATION_FACTOR: 2
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 2
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 2
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 2
+    volumes:
+      - kafka1-data:/tmp/kraft-combined-logs
+    healthcheck:
+      test: [ "CMD-SHELL", "/opt/kafka/bin/kafka-broker-api-versions.sh --bootstrap-server localhost:9092 >/dev/null 2>&1" ]
+      interval: 10s
+      timeout: 10s
+      retries: 12
+      start_period: 20s
+
+  kafka2:
+    image: apache/kafka:4.3.1
+    container_name: unified-examples-kafka2
+    ports:
+      - "9093:29092"
+    environment:
+      KAFKA_NODE_ID: 2
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_LISTENERS: PLAINTEXT://:9092,CONTROLLER://:9093,PLAINTEXT_HOST://:29092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka2:9092,PLAINTEXT_HOST://localhost:9093
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka1:9093,2@kafka2:9093
+      CLUSTER_ID: CBQjXov-TzCD4bQhiAgXDw
+      KAFKA_DEFAULT_REPLICATION_FACTOR: 2
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 2
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 2
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 2
+    volumes:
+      - kafka2-data:/tmp/kraft-combined-logs
+    healthcheck:
+      test: [ "CMD-SHELL", "/opt/kafka/bin/kafka-broker-api-versions.sh --bootstrap-server localhost:9092 >/dev/null 2>&1" ]
+      interval: 10s
+      timeout: 10s
+      retries: 12
+      start_period: 20s
+
+  kafka-ui:
+    image: kafbat/kafka-ui:latest
+    container_name: unified-examples-kafka-ui
+    ports:
+      - "8085:8080"
+    environment:
+      KAFKA_CLUSTERS_0_NAME: unified-examples
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka1:9092,kafka2:9092
+      DYNAMIC_CONFIG_ENABLED: "true"
+    depends_on:
+      kafka1:
+        condition: service_healthy
+      kafka2:
+        condition: service_healthy
+
+volumes:
+  kafka1-data:
+  kafka2-data:
